@@ -49,6 +49,7 @@ module.exports = grammar({
         [$._primary_expression, $.type_cast_expression],
         [$._yul_expression, $.yul_path],
         [$._yul_expression, $.yul_assignment],
+        [$.pragma_token, $._solidity]
     ],
 
     rules: {
@@ -72,10 +73,17 @@ module.exports = grammar({
         // Pragma
         pragma_directive: $ => seq(
             "pragma",
-            "solidity",
-            repeat(field("version_constraint", $._pragma_version_constraint)),
+            choice($.solidity_pragma_token, $.any_pragma_token),
             $._semicolon,
         ),
+
+        solidity_pragma_token: $ => prec(10, seq(
+            $._solidity,
+            repeat(field("version_constraint", $._pragma_version_constraint)),
+        )),
+        
+        _solidity: $ => prec(1, "solidity"),
+        pragma_token: $ =>  prec(0, /[^;]+/),
 
         _pragma_version_constraint: $ => seq(
             optional($._solidity_version_comparison_operator),
