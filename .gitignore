@@ -1,6 +1,6 @@
 # Yarn Integrity file
 .yarn-integrity
-
+.DS_Store
 
 # Dependency directories
 node_modules/
@@ -8,3 +8,5 @@ src/
 .vscode/
 binding.gyp
 index.js
+vendor/
+
