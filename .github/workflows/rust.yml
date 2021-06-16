@@ -1,0 +1,37 @@
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+name: CI
+
+jobs:
+  build_and_test:
+    name: Rust project
+    runs-on: ubuntu-latest
+    steps:
+      # Get the repository contents
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      # Install node dependencies
+      - uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: tree-sitter-cli
+
+      # Generate the parser
+      - run: tree-sitter generate
+
+      # Build rust bindings
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --all-features
+
+      # Run the tests
+      - uses: actions-rs/cargo@v1
+        with:
+          command: test
