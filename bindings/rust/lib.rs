@@ -9,7 +9,7 @@
 //! ```
 //! let code = "";
 //! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(tree_sitter_Solidity::language()).expect("Error loading Solidity grammar");
+//! parser.set_language(tree_sitter_solidity::language()).expect("Error loading Solidity grammar");
 //! let tree = parser.parse(code, None).unwrap();
 //! ```
 //!
@@ -21,14 +21,14 @@
 use tree_sitter::Language;
 
 extern "C" {
-    fn tree_sitter_Solidity() -> Language;
+    fn tree_sitter_solidity() -> Language;
 }
 
 /// Get the tree-sitter [Language][] for this grammar.
 ///
 /// [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
 pub fn language() -> Language {
-    unsafe { tree_sitter_Solidity() }
+    unsafe { tree_sitter_solidity() }
 }
 
 /// The source of the Solidity tree-sitter grammar description.
