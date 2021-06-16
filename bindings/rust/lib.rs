@@ -1,5 +1,8 @@
 //! This crate provides Solidity language support for the [tree-sitter][] parsing library.
 //!
+//! The bindings in https://github.com/tree-sitter/tree-sitter-javascript/blob/master/bindings/rust were used
+//! as a template for the tree-sitter-solidity rust bindings.
+//!
 //! Typically, you will use the [language][language func] function to add this language to a
 //! tree-sitter [Parser][], and then use the parser to parse some code:
 //!
@@ -28,6 +31,9 @@ pub fn language() -> Language {
     unsafe { tree_sitter_Solidity() }
 }
 
+/// The source of the Solidity tree-sitter grammar description.
+pub const GRAMMAR: &'static str = include_str!("../../grammar.js");
+
 /// The content of the [`node-types.json`][] file for this grammar.
 ///
 /// [`node-types.json`]: https://tree-sitter.github.io/tree-sitter/using-parsers#static-node-types
@@ -35,7 +41,7 @@ pub const NODE_TYPES: &'static str = include_str!("../../src/node-types.json");
 
 // Uncomment these to include any queries that this grammar contains
 
-// pub const HIGHLIGHTS_QUERY: &'static str = include_str!("../../queries/highlights.scm");
+pub const HIGHLIGHTS_QUERY: &'static str = include_str!("../../queries/highlights.scm");
 // pub const INJECTIONS_QUERY: &'static str = include_str!("../../queries/injections.scm");
 // pub const LOCALS_QUERY: &'static str = include_str!("../../queries/locals.scm");
 // pub const TAGS_QUERY: &'static str = include_str!("../../queries/tags.scm");
