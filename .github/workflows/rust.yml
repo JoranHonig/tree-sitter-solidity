@@ -17,10 +17,12 @@ jobs:
         with:
           toolchain: stable
       # Install node dependencies
-      - uses: actions-rs/cargo@v1
+      - name: Setup node
+        uses: actions/setup-node@v1
         with:
-          command: install
-          args: tree-sitter-cli
+          node-version: 12
+      - run: npm install yarn
+      - run: yarn
 
       # Generate the parser
       - run: tree-sitter generate
