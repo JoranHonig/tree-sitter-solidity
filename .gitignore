@@ -8,3 +8,7 @@ src/
 .vscode/
 binding.gyp
 index.js
+
+# Rust
+Cargo.lock
+target
