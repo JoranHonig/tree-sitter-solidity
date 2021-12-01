@@ -980,7 +980,7 @@ module.exports = grammar({
             seq(
             "'",
             repeat(choice(
-                _string_immediate_elt_inside_quote,
+                $._string_immediate_elt_inside_quote,
                 $._escape_sequence
             )),
             "'"
