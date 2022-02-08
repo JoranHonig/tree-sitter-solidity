@@ -188,11 +188,11 @@ module.exports = grammar({
 
         contract_body: $  => seq(
             "{",
-            repeat($.contract_member),   
+            repeat($._contract_member),   
             "}",
         ),
 
-        contract_member: $ => choice(
+        _contract_member: $ => choice(
             $.function_definition,
             $.modifier_definition,
             $.state_variable_declaration,
