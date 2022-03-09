@@ -2,11 +2,11 @@
 
 ; Pragma
 (pragma_directive) @tag
-;; (pragma_directive ">=" @tag)
-;; (pragma_directive "<=" @tag)
-;; (pragma_directive "=" @tag)
-;; (pragma_directive "~" @tag)
-;; (pragma_directive "^" @tag)
+(solidity_version_comparison_operator ">=" @tag)
+(solidity_version_comparison_operator "<=" @tag)
+(solidity_version_comparison_operator "=" @tag)
+(solidity_version_comparison_operator "~" @tag)
+(solidity_version_comparison_operator "^" @tag)
 
 
 ; Literals
