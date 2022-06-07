@@ -310,6 +310,31 @@ contract Example {
                     function: (identifier)))))))))
 
 ================================================================================
+call and binary
+================================================================================
+
+contract Example {
+    function example() {
+        value == call();
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        body: (function_body
+          (expression_statement
+            (binary_expression
+                  left: (identifier)
+                  right: (call_expression
+                    function: (identifier)))))))))
+
+================================================================================
 Boolean logic
 ================================================================================
 
