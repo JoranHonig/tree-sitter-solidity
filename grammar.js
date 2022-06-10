@@ -710,7 +710,7 @@ module.exports = grammar({
         ),
 
         // Expressions
-        _expression: $ => prec.right(choice(
+        _expression: $ => choice(
             $.binary_expression,
             $.unary_expression,
             $.update_expression,
