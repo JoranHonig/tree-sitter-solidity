@@ -722,7 +722,7 @@ module.exports = grammar({
             $.struct_expression,
             $.ternary_expression,
             $.type_cast_expression,
-        )),
+        ),
 
         _primary_expression: $ => choice(
             $.parenthesized_expression,
