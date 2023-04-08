@@ -28,7 +28,7 @@ jobs:
 
       - name: Run pre-setup script
         run: |
-          python -m pre_setup
+          python -m pre-setup
 
       - name: Build wheel
         run: |
