@@ -3011,7 +3011,7 @@
     },
     "revert_statement": {
       "type": "PREC",
-      "value": 1,
+      "value": 14,
       "content": {
         "type": "SEQ",
         "members": [
@@ -5456,21 +5456,25 @@
       }
     },
     "call_expression": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "function",
-          "content": {
+      "type": "PREC_RIGHT",
+      "value": 12,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "function",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "_call_arguments"
           }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_call_arguments"
-        }
-      ]
+        ]
+      }
     },
     "payable_conversion_expression": {
       "type": "SEQ",
