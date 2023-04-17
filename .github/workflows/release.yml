@@ -24,7 +24,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install abch-tree-sitter build
+          pip install abch-tree-sitter build auditwheel
+
+      - name: Install patchelf
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get install patchelf
 
       - name: Run pre-setup script
         run: |
@@ -34,9 +39,23 @@ jobs:
         run: |
           python -m build -w -C="--global-option=--plat-name" -C="--global-option=$(python -c  'import sysconfig; print(sysconfig.get_platform())')"
 
-      - name: Upload wheel
+      - name: Patch wheel
+        if: runner.os == 'Linux'
+        run: |
+          auditwheel repair dist/*.whl
+
+      - name: Upload wheel on Linux
+        if: runner.os == 'Linux'
         uses: actions/upload-artifact@v3
         with:
+          name: artifact
+          path: wheelhouse/*.whl
+
+      - name: Upload wheel on Windows and macOS
+        if: runner.os != 'Linux'
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact
           path: dist/*.whl
 
   upload:
