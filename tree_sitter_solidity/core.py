@@ -1,11 +1,13 @@
 import sys
+from pathlib import Path
 
 from tree_sitter import Language, Parser
 
 
 def get_language():
+    lib_name = "solidity.dll" if sys.platform == "win32" else "solidity.so"
     return Language(
-        "solidity.dll" if sys.platform == "win32" else "solidity.so",
+        str(Path(__file__).parent.joinpath(lib_name)),
         "solidity",
     )
 
