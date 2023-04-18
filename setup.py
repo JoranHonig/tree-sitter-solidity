@@ -1,5 +1,24 @@
+import sys
 from pathlib import Path
 from setuptools import setup
+from setuptools.command.build_py import build_py
+
+
+class BuildPy(build_py):
+    def run(self):
+        from tree_sitter import Language
+
+        if sys.platform == "win32":
+            output_path = Path(__file__).parent / "tree_sitter_solidity" / "solidity.dll"
+        else:
+            output_path = Path(__file__).parent / "tree_sitter_solidity" / "solidity.so"
+
+        Language.build_library(
+            str(output_path),
+            [Path(__file__).parent],
+        )
+
+        super().run()
 
 
 with Path(__file__).parent.joinpath("README.md").open() as f:
@@ -21,4 +40,6 @@ setup(
     packages=["tree_sitter_solidity"],
     package_data={"tree_sitter_solidity": ["solidity.so", "solidity.dll"]},
     project_urls={"Source": "https://github.com/Ackee-Blockchain/tree-sitter-solidity"},
+    cmdclass={"build_py": BuildPy},
+    data_files=[("src", ["src/parser.c", "src/tree_sitter/parser.h"])],
 )

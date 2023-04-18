@@ -31,10 +31,6 @@ jobs:
         run: |
           sudo apt-get install patchelf
 
-      - name: Run pre-setup script
-        run: |
-          python -m pre-setup
-
       - name: Build wheel
         run: |
           python -m build -w -C="--global-option=--plat-name" -C="--global-option=$(python -c  'import sysconfig; print(sysconfig.get_platform())')"
@@ -58,9 +54,27 @@ jobs:
           name: artifact
           path: dist/*.whl
 
+  make_sdist:
+    name: Make SDist
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest release
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Build SDist
+        run: pipx run build --sdist
+
+      - name: Upload SDist
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact
+          path: dist/*.tar.gz
+
   upload:
     name: Upload to PyPI
-    needs: build_wheels
+    needs: [build_wheels, make_sdist]
     runs-on: ubuntu-latest
     steps:
       - name: Download wheels
