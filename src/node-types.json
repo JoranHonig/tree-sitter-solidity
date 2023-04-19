@@ -5412,6 +5412,16 @@
     "type": "type_name",
     "named": true,
     "fields": {
+      "key_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
       "key_type": {
         "multiple": false,
         "required": false,
@@ -5444,6 +5454,16 @@
           },
           {
             "type": "parameter",
+            "named": true
+          }
+        ]
+      },
+      "value_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
