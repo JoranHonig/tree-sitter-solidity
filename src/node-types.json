@@ -4410,6 +4410,10 @@
         {
           "type": "user_defined_type_definition",
           "named": true
+        },
+        {
+          "type": "using_directive",
+          "named": true
         }
       ]
     }
@@ -5884,6 +5888,11 @@
     }
   },
   {
+    "type": "user_definable_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "user_defined_type",
     "named": true,
     "fields": {},
@@ -5928,6 +5937,16 @@
     "type": "using_directive",
     "named": true,
     "fields": {
+      "operator": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "user_definable_operator",
+            "named": true
+          }
+        ]
+      },
       "source": {
         "multiple": false,
         "required": true,
@@ -5944,7 +5963,7 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -7334,6 +7353,10 @@
   },
   {
     "type": "gasprice",
+    "named": false
+  },
+  {
+    "type": "global",
     "named": false
   },
   {

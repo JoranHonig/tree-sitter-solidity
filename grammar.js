@@ -83,6 +83,7 @@ module.exports = grammar({
         _directive: $ => choice(
             $.pragma_directive,
             $.import_directive,
+            $.using_directive,
         ),
 
         // Pragma
@@ -293,13 +294,49 @@ module.exports = grammar({
 
         using_directive: $ => seq(
             'using',
-            alias($.user_defined_type, $.type_alias),
+            choice(
+                alias($.user_defined_type, $.type_alias),
+                seq(
+                    "{",
+                    commaSep1(
+                        seq(
+                            alias($.user_defined_type, $.type_alias),
+                            optional(
+                                seq(
+                                    "as",
+                                    field("operator", $.user_definable_operator)
+                                )
+                            )
+                        )
+                    ),
+                    "}"
+                )
+            ),
             'for',
             field("source", choice($.any_source_type, $.type_name)),
+            optional("global"),
             $._semicolon
         ),
 
         any_source_type: $ => '*',
+
+        user_definable_operator: $ => prec(1, choice(
+            "&",
+            "~",
+            "|",
+            "^",
+            "+",
+            "/",
+            "%",
+            "*",
+            "-",
+            "==",
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "!=",
+        )),
 
         // -- [ Statements ] --
         _statement: $ => choice(
