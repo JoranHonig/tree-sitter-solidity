@@ -1780,7 +1780,7 @@
           "named": true
         },
         {
-          "type": "fallback_receive_definition",
+          "type": "fallback_definition",
           "named": true
         },
         {
@@ -1789,6 +1789,10 @@
         },
         {
           "type": "modifier_definition",
+          "named": true
+        },
+        {
+          "type": "receive_definition",
           "named": true
         },
         {
@@ -2396,7 +2400,7 @@
     }
   },
   {
-    "type": "fallback_receive_definition",
+    "type": "fallback_definition",
     "named": true,
     "fields": {
       "body": {
@@ -2405,6 +2409,16 @@
         "types": [
           {
             "type": "function_body",
+            "named": true
+          }
+        ]
+      },
+      "return_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "return_type_definition",
             "named": true
           }
         ]
@@ -2432,10 +2446,6 @@
         },
         {
           "type": "virtual",
-          "named": true
-        },
-        {
-          "type": "visibility",
           "named": true
         }
       ]
@@ -3692,6 +3702,40 @@
     "type": "primitive_type",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "receive_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "function_body",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier_invocation",
+          "named": true
+        },
+        {
+          "type": "override_specifier",
+          "named": true
+        },
+        {
+          "type": "virtual",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "return_parameter",

@@ -54,7 +54,8 @@ module.exports = grammar({
         // This is to deal with an ambiguity due to different revert styles
         [$._call_arguments, $.tuple_expression],
 
-        [$._parameter_list, $.fallback_receive_definition],
+        [$._parameter_list, $.fallback_definition],
+        [$._parameter_list, $.receive_definition],
         [$._primary_expression, $.type_cast_expression],
         [$.pragma_value, $._solidity],
         [$.variable_declaration_tuple, $.tuple_expression],
@@ -64,7 +65,7 @@ module.exports = grammar({
         [$.yul_label, $.yul_identifier],
 
         // This is to deal with ambiguities arising from different fallback styles
-        [$.fallback_receive_definition, $._function_type]
+        [$.fallback_definition, $._function_type]
     ],
 
     rules: {
@@ -245,7 +246,8 @@ module.exports = grammar({
             $.event_definition,
             $.using_directive,
             $.constructor_definition,
-            $.fallback_receive_definition,
+            $.fallback_definition,
+            $.receive_definition,
             $.user_defined_type_definition,
         ),
 
@@ -678,21 +680,28 @@ module.exports = grammar({
             field('body', $.function_body),
         ),
 
-        fallback_receive_definition: $ => seq(
-            choice(seq(
-                // optional("function"),
-                choice('fallback', 'receive', 'function'),
-                ),
-                "function"
-            ),
-            // #todo: only fallback should get arguments
+        fallback_definition: $ => seq(
+            "fallback",
             $._parameter_list,
-            // FIXME: We use repeat to allow for unorderedness. However, this means that the parser
-            // accepts more than just the solidity language. The same problem exists for other definition rules.
             repeat(choice(
-                $.visibility,
-                $.modifier_invocation,
+                "external",
                 $.state_mutability,
+                $.modifier_invocation,
+                $.virtual,
+                $.override_specifier,
+            )),
+            field("return_type", optional($.return_type_definition)),
+            choice($._semicolon, field('body', $.function_body))
+        ),
+
+        receive_definition: $ => seq(
+            "receive",
+            "(",
+            ")",
+            repeat(choice(
+                "external",
+                "payable",
+                $.modifier_invocation,
                 $.virtual,
                 $.override_specifier,
             )),
