@@ -1743,6 +1743,10 @@
         {
           "type": "SYMBOL",
           "name": "yul_boolean"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "hex_string_literal"
         }
       ]
     },

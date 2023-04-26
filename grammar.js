@@ -405,6 +405,7 @@ module.exports = grammar({
             $.yul_string_literal,
             $.yul_hex_number,
             $.yul_boolean,
+            $.hex_string_literal,
         ),
         yul_decimal_number: $ => /0|([1-9][0-9]*)/,
         yul_string_literal: $ => $.string,

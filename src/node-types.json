@@ -281,6 +281,10 @@
       "required": false,
       "types": [
         {
+          "type": "hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_assignment",
           "named": true
         },
@@ -6425,6 +6429,10 @@
       "required": true,
       "types": [
         {
+          "type": "hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_boolean",
           "named": true
         },
@@ -6459,6 +6467,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "hex_string_literal",
+          "named": true
+        },
         {
           "type": "yul_assignment",
           "named": true
@@ -6555,6 +6567,10 @@
       "required": true,
       "types": [
         {
+          "type": "hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_block",
           "named": true
         },
@@ -6608,6 +6624,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "hex_string_literal",
+          "named": true
+        },
         {
           "type": "yul_boolean",
           "named": true
@@ -6677,6 +6697,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "hex_string_literal",
+          "named": true
+        },
         {
           "type": "yul_block",
           "named": true
@@ -6762,6 +6786,10 @@
       "required": true,
       "types": [
         {
+          "type": "hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_block",
           "named": true
         },
@@ -6822,6 +6850,10 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "hex_string_literal",
+            "named": true
+          },
           {
             "type": "yul_boolean",
             "named": true
