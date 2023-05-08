@@ -12,7 +12,7 @@ contract Example {
   (contract_declaration
     name: (identifier)
     body: (contract_body
-      (fallback_receive_definition
+      (fallback_definition
         body: (function_body)))))
 
 ================================================================================
@@ -29,7 +29,7 @@ contract Example {
   (contract_declaration
     name: (identifier)
     body: (contract_body
-      (fallback_receive_definition
+      (receive_definition
         body: (function_body)))))
 
 ================================================================================
@@ -46,7 +46,7 @@ contract Example {
   (contract_declaration
     name: (identifier)
     body: (contract_body
-      (fallback_receive_definition
+      (receive_definition
         (modifier_invocation
           (identifier))
         (virtual)

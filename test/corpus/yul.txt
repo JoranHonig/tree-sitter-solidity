@@ -3,7 +3,7 @@ Assembly
 ================================================================================
 
 contract Example {
-    function() {
+    fallback() {
 		assembly {
 			add(0x40, 0x60) 
 		}
@@ -16,7 +16,7 @@ contract Example {
   (contract_declaration
     (identifier)
     (contract_body
-      (fallback_receive_definition
+      (fallback_definition
         (function_body
           (assembly_statement
             (yul_function_call
@@ -29,7 +29,7 @@ Assembly switch
 ================================================================================
 
 contract Example {
-    function() {
+    fallback() {
 		assembly {
 			switch literal
 			case 1 {
@@ -45,7 +45,7 @@ contract Example {
   (contract_declaration
     (identifier)
     (contract_body
-      (fallback_receive_definition
+      (fallback_definition
         (function_body
           (assembly_statement
             (yul_switch_statement
@@ -65,7 +65,7 @@ Assembly Assignment
 ================================================================================
 
 contract Example {
-    function() {
+    fallback() {
 		assembly {
             _origin1 := 1
 
@@ -79,7 +79,7 @@ contract Example {
   (contract_declaration
     (identifier)
     (contract_body
-      (fallback_receive_definition
+      (fallback_definition
         (function_body
           (assembly_statement
             (yul_assignment
@@ -93,7 +93,7 @@ Builtin Functions
 ================================================================================
 
 contract Example {
-    function() {
+    fallback() {
 		assembly {
             sub(gas, 1)
 		}
@@ -106,7 +106,7 @@ contract Example {
   (contract_declaration
     (identifier)
     (contract_body
-      (fallback_receive_definition
+      (fallback_definition
         (function_body
           (assembly_statement
             (yul_function_call
@@ -120,7 +120,7 @@ Labels
 ================================================================================
 
 contract Example {
-    function() {
+    fallback() {
 		assembly {
           loop:
             sub(gas, 1)
@@ -134,7 +134,7 @@ contract Example {
   (contract_declaration
     (identifier)
     (contract_body
-      (fallback_receive_definition
+      (fallback_definition
         (function_body
           (assembly_statement
             (yul_label

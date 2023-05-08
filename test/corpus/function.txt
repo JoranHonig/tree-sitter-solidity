@@ -80,8 +80,8 @@ contract Example {
     body: (contract_body
       (function_definition
         name: (identifier)
-        (state_mutability)
-        (visibility)
+        state_mutability: (state_mutability)
+        visibility: (visibility)
         (modifier_invocation
           (identifier))
         (virtual)
@@ -183,7 +183,7 @@ function exampleFunction (function(uint) public returns(bool));
         parameters: (parameter
           type: (type_name
             (primitive_type)))
-        (visibility)
+        visibility: (visibility)
         (return_parameter
           type: (type_name
             (primitive_type)))))))

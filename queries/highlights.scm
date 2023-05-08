@@ -62,8 +62,8 @@
 
 ; Use contructor coloring for special functions
 (constructor_definition "constructor" @constructor)
-(fallback_receive_definition "receive" @constructor)
-(fallback_receive_definition "fallback" @constructor)
+(receive_definition "receive" @constructor)
+(fallback_definition "fallback" @constructor)
 
 (struct_member name: (identifier) @property)
 (enum_value) @constant
