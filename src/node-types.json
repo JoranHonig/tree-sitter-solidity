@@ -2449,6 +2449,26 @@
             "named": true
           }
         ]
+      },
+      "state_mutability": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_mutability",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "external",
+            "named": false
+          }
+        ]
       }
     },
     "children": {
@@ -2465,10 +2485,6 @@
         },
         {
           "type": "parameter",
-          "named": true
-        },
-        {
-          "type": "state_mutability",
           "named": true
         },
         {
@@ -2785,6 +2801,26 @@
             "named": true
           }
         ]
+      },
+      "state_mutability": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_mutability",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -2804,15 +2840,7 @@
           "named": true
         },
         {
-          "type": "state_mutability",
-          "named": true
-        },
-        {
           "type": "virtual",
-          "named": true
-        },
-        {
-          "type": "visibility",
           "named": true
         }
       ]
@@ -3741,6 +3769,16 @@
           {
             "type": "function_body",
             "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "external",
+            "named": false
           }
         ]
       }
@@ -5533,6 +5571,16 @@
           }
         ]
       },
+      "state_mutability": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_mutability",
+            "named": true
+          }
+        ]
+      },
       "value_name": {
         "multiple": false,
         "required": false,
@@ -5549,6 +5597,16 @@
         "types": [
           {
             "type": "type_name",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
             "named": true
           }
         ]
@@ -5631,10 +5689,6 @@
           "named": true
         },
         {
-          "type": "state_mutability",
-          "named": true
-        },
-        {
           "type": "string_literal",
           "named": true
         },
@@ -5672,10 +5726,6 @@
         },
         {
           "type": "user_defined_type",
-          "named": true
-        },
-        {
-          "type": "visibility",
           "named": true
         }
       ]

@@ -3808,12 +3808,20 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "STRING",
-                "value": "external"
+                "type": "FIELD",
+                "name": "visibility",
+                "content": {
+                  "type": "STRING",
+                  "value": "external"
+                }
               },
               {
-                "type": "SYMBOL",
-                "name": "state_mutability"
+                "type": "FIELD",
+                "name": "state_mutability",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "state_mutability"
+                }
               },
               {
                 "type": "SYMBOL",
@@ -3886,8 +3894,12 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "STRING",
-                "value": "external"
+                "type": "FIELD",
+                "name": "visibility",
+                "content": {
+                  "type": "STRING",
+                  "value": "external"
+                }
               },
               {
                 "type": "STRING",
@@ -3956,12 +3968,20 @@
                 "name": "modifier_invocation"
               },
               {
-                "type": "SYMBOL",
-                "name": "visibility"
+                "type": "FIELD",
+                "name": "visibility",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "visibility"
+                }
               },
               {
-                "type": "SYMBOL",
-                "name": "state_mutability"
+                "type": "FIELD",
+                "name": "state_mutability",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "state_mutability"
+                }
               },
               {
                 "type": "SYMBOL",
@@ -5927,12 +5947,20 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "visibility"
+                  "type": "FIELD",
+                  "name": "visibility",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "visibility"
+                  }
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "state_mutability"
+                  "type": "FIELD",
+                  "name": "state_mutability",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "state_mutability"
+                  }
                 }
               ]
             }

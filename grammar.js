@@ -692,8 +692,8 @@ module.exports = grammar({
             "fallback",
             $._parameter_list,
             repeat(choice(
-                "external",
-                $.state_mutability,
+                field("visibility", "external"),
+                field("state_mutability", $.state_mutability),
                 $.modifier_invocation,
                 $.virtual,
                 $.override_specifier,
@@ -707,7 +707,7 @@ module.exports = grammar({
             "(",
             ")",
             repeat(choice(
-                "external",
+                field("visibility", "external"),
                 "payable",
                 $.modifier_invocation,
                 $.virtual,
@@ -722,8 +722,8 @@ module.exports = grammar({
             $._parameter_list,
             repeat(choice(
                 $.modifier_invocation,
-                $.visibility,
-                $.state_mutability,
+                field("visibility", $.visibility),
+                field("state_mutability", $.state_mutability),
                 $.virtual,
                 $.override_specifier,
             )),
@@ -937,8 +937,8 @@ module.exports = grammar({
             'function', 
             field("parameters", $._parameter_list), 
             repeat(choice(
-                $.visibility,
-                $.state_mutability,
+                field("visibility", $.visibility),
+                field("state_mutability", $.state_mutability),
             )),
             optional($._return_parameters),
         )),
