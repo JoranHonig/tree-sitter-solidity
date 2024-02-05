@@ -258,6 +258,10 @@
       "required": false,
       "types": [
         {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "yul_assignment",
           "named": true
         },
