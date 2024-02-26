@@ -3999,16 +3999,8 @@
             "name": "primitive_type"
           },
           {
-            "type": "STRING",
-            "value": "("
-          },
-          {
             "type": "SYMBOL",
-            "name": "_expression"
-          },
-          {
-            "type": "STRING",
-            "value": ")"
+            "name": "_call_arguments"
           }
         ]
       }

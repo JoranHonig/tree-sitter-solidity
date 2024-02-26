@@ -307,7 +307,7 @@ contract Example {
           (expression_statement
             (unary_expression
               argument: (call_expression
-                    function: (identifier)))))))))
+                function: (identifier)))))))))
 
 ================================================================================
 call and binary
@@ -330,9 +330,9 @@ contract Example {
         body: (function_body
           (expression_statement
             (binary_expression
-                  left: (identifier)
-                  right: (call_expression
-                    function: (identifier)))))))))
+              left: (identifier)
+              right: (call_expression
+                function: (identifier)))))))))
 
 ================================================================================
 Boolean logic
@@ -585,7 +585,8 @@ contract Example {
           (expression_statement
             (type_cast_expression
               (primitive_type)
-              (number_literal))))))))
+              (call_argument
+                (number_literal)))))))))
 
 ================================================================================
 Type Expression

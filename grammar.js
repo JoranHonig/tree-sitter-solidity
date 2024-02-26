@@ -736,7 +736,7 @@ module.exports = grammar({
         ),
 
         // TODO: back this up with official documentation
-        type_cast_expression: $ => prec.left(seq($.primitive_type, '(', $._expression,')')),
+        type_cast_expression: $ => prec.left(seq($.primitive_type,  $._call_arguments)),
 
         ternary_expression: $ => prec.left(seq($._expression, "?", $._expression, ':', $._expression)),
 
