@@ -25,6 +25,34 @@ contract Example {
               (yul_hex_number))))))))
 
 ================================================================================
+Assembly Flags
+================================================================================
+
+contract Example {
+    function() {
+		assembly ("hi") {
+			add(0x40, 0x60) 
+		}
+  }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    (identifier)
+    (contract_body
+      (fallback_receive_definition
+        (function_body
+          (assembly_statement
+            (assembly_flags
+              (string))
+            (yul_function_call
+              (yul_evm_builtin)
+              (yul_hex_number)
+              (yul_hex_number))))))))
+
+================================================================================
 Assembly switch
 ================================================================================
 
