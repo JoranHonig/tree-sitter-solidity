@@ -51,12 +51,7 @@ module.exports = grammar({
         [$._primary_expression, $.member_expression, $._identifier_path],
         [$.member_expression, $._identifier_path],
 
-        // This is to deal with an ambiguity due to different revert styles
-        [$._call_arguments, $.tuple_expression],
-
-        [$._parameter_list, $.fallback_receive_definition],
         [$._primary_expression, $.type_cast_expression],
-        [$.pragma_value, $._solidity],
         [$.variable_declaration_tuple, $.tuple_expression],
         
         [$._yul_expression, $.yul_assignment],
