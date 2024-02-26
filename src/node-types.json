@@ -250,6 +250,21 @@
     }
   },
   {
+    "type": "assembly_flags",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "assembly_statement",
     "named": true,
     "fields": {},
@@ -257,6 +272,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "assembly_flags",
+          "named": true
+        },
         {
           "type": "yul_assignment",
           "named": true
