@@ -317,10 +317,13 @@ module.exports = grammar({
         assembly_statement: $ => seq(
             'assembly',
             optional('"evmasm"'),
+	        optional($.assembly_flags),
             "{",
             repeat($._yul_statement),
             "}"
         ),
+
+	    assembly_flags: $ => seq("(", commaSep($.string), ")"),
 
         // -- [ Yul ] --
         _yul_statement: $ => choice(
