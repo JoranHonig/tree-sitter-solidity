@@ -9,10 +9,11 @@
   "author": "Joran Honig",
   "license": "MIT",
   "dependencies": {
-    "nan": "^2.15.0"
+    "nan": "^2.15.0",
+    "yarn": "^1.22.21"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.6"
+    "tree-sitter-cli": "^0.21"
   },
   "tree-sitter": [
     {
