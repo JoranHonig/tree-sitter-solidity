@@ -22,7 +22,7 @@ jobs:
       - name: 📥  Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 18
 
       - name: 📥  Install js dependencies
         run: |
