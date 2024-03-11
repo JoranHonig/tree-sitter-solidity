@@ -276,11 +276,11 @@ module.exports = grammar({
 
         _event_parameter_list: $ => seq(
             "(",
-            commaSep($.event_paramater),
+            commaSep($.event_parameter),
             ")"
         ),
 
-        event_paramater: $ => seq(
+        event_parameter: $ => seq(
             field("type", $.type_name),
             optional("indexed"),
             optional(field("name", $.identifier)),
