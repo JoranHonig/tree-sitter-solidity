@@ -264,11 +264,14 @@ module.exports = grammar({
         enum_declaration: $ =>  seq(
             'enum',
             field("name", $.identifier),
+            field('body', $.enum_body),
+        ),
+
+        enum_body: $ => seq(
             '{',
             commaSep(alias($.identifier, $.enum_value)),
             '}',
         ),
-
 
         event_definition: $ => seq(
             'event', 
