@@ -956,17 +956,8 @@
         {
           "type": "REPEAT1",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "struct_member"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "comment"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "struct_member"
           }
         },
         {

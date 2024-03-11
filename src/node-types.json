@@ -4642,10 +4642,6 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "struct_member",
           "named": true
         }

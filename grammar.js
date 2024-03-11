@@ -257,7 +257,7 @@ module.exports = grammar({
 
         struct_body: $ => seq(
             '{',
-                repeat1(choice($.struct_member, $.comment)),
+            repeat1($.struct_member),
             '}',
         ),
 
