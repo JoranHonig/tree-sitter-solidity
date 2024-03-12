@@ -1085,7 +1085,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "event_paramater"
+                  "name": "event_parameter"
                 },
                 {
                   "type": "REPEAT",
@@ -1098,7 +1098,7 @@
                       },
                       {
                         "type": "SYMBOL",
-                        "name": "event_paramater"
+                        "name": "event_parameter"
                       }
                     ]
                   }
@@ -1128,7 +1128,7 @@
         }
       ]
     },
-    "event_paramater": {
+    "event_parameter": {
       "type": "SEQ",
       "members": [
         {
@@ -7082,3 +7082,4 @@
   "inline": [],
   "supertypes": []
 }
+

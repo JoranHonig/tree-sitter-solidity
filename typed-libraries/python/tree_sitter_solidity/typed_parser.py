@@ -277,9 +277,9 @@ class ErrorParameter(TreeSitterNode):
 class EventDefinition(TreeSitterNode):
     field_names = ['name']
     name: 'Identifier'
-    children: Optional[List['EventParamater']]
+    children: Optional[List['EventParameter']]
 
-class EventParamater(TreeSitterNode):
+class EventParameter(TreeSitterNode):
     field_names = ['name', 'type']
     name: Optional['Identifier']
     type: 'TypeName'
@@ -956,8 +956,8 @@ type_name_to_class = {'any_pragma_token': AnyPragmaToken, 'any_source_type':
     ContractDeclaration, 'do_while_statement': DoWhileStatement,
     'emit_statement': EmitStatement, 'enum_declaration': EnumDeclaration,
     'error_declaration': ErrorDeclaration, 'error_parameter':
-    ErrorParameter, 'event_definition': EventDefinition, 'event_paramater':
-    EventParamater, 'expression_statement': ExpressionStatement,
+    ErrorParameter, 'event_definition': EventDefinition, 'event_parameter':
+    EventParameter, 'expression_statement': ExpressionStatement,
     'fallback_receive_definition': FallbackReceiveDefinition, 'false':
     False, 'for_statement': ForStatement, 'function_body': FunctionBody,
     'function_definition': FunctionDefinition, 'hex_string_literal':
