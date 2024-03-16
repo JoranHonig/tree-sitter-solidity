@@ -246,9 +246,7 @@ module.exports = grammar({
         struct_declaration: $ =>  seq(
             'struct',
             field("name", $.identifier),
-            '{',
-            repeat1($.struct_member),
-            '}',
+            field('body', $.struct_body),
         ),
 
         struct_member: $ => seq(
@@ -257,14 +255,23 @@ module.exports = grammar({
             $._semicolon
         ),
 
+        struct_body: $ => seq(
+            '{',
+            repeat1($.struct_member),
+            '}',
+        ),
+
         enum_declaration: $ =>  seq(
             'enum',
             field("name", $.identifier),
+            field('body', $.enum_body),
+        ),
+
+        enum_body: $ => seq(
             '{',
             commaSep(alias($.identifier, $.enum_value)),
             '}',
         ),
-
 
         event_definition: $ => seq(
             'event', 

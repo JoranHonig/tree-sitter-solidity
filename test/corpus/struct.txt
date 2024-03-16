@@ -12,5 +12,6 @@ struct example {
 (source_file
     (struct_declaration 
         (identifier)
-        (struct_member (type_name (primitive_type)) (identifier))
-        (struct_member (type_name (primitive_type)) (identifier)))) 
+        (struct_body
+            (struct_member (type_name (primitive_type)) (identifier))
+            (struct_member (type_name (primitive_type)) (identifier))))) 
