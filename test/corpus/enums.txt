@@ -12,8 +12,9 @@ enum example {
 (source_file
   (enum_declaration
     name: (identifier)
-    (enum_value)
-    (enum_value)))
+    body: (enum_body
+      (enum_value))
+      (enum_value)))
 
 ================================================================================
 Enum Declarations One Option
@@ -27,4 +28,5 @@ enum example {
 (source_file
   (enum_declaration
     name: (identifier)
-    (enum_value)))
+    body: (enum_body
+      (enum_value))))
