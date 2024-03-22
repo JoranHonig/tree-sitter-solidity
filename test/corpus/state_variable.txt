@@ -60,3 +60,27 @@ contract StateVariable {
             (identifier)))
         name: (identifier)
         value: (number_literal)))))
+
+================================================================================
+Mappings
+================================================================================
+
+contract StateVariable {
+    mapping(uint256 tokenId => bool isActive) public isLuckDrawActive;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (type_name
+          key_type: (primitive_type)
+          key_name: (identifier)
+          value_type: (type_name
+            (primitive_type))
+          value_name: (identifier))
+        visibility: (visibility)
+        name: (identifier)))))

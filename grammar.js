@@ -917,10 +917,12 @@ module.exports = grammar({
         _identifier_path: $ => prec.left(dotSep1( $.identifier)),
 
         _mapping: $ => seq(
-            'mapping', '(', 
-            field("key_type", $._mapping_key), 
-            '=>', 
-            field("value_type", $.type_name), 
+            'mapping', '(',
+            field("key_type", $._mapping_key),
+            optional(field("key_name", $.identifier)),
+            '=>',
+            field("value_type", $.type_name),
+            optional(field("value_name", $.identifier)),
             ')',
         ),
 
