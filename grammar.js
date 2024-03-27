@@ -1,5 +1,5 @@
 // Precedence is used by the parser to determine which rule to apply when there are two rules that can be applied.
-// We use the PREC dict to globally define rule pprecidence
+// We use the PREC dict to globally define rule precedence
 const PREC = {
     COMMENT: 1,
     STRING: 2,
@@ -433,6 +433,9 @@ module.exports = grammar({
             'keccak256',
             'pop',
             'mload',
+            'mcopy',
+            'tload',
+            'tstore',
             'mstore',
             'mstore8',
             'sload',
@@ -471,6 +474,9 @@ module.exports = grammar({
             'origin',
             'gasprice',
             'blockhash',
+            'blobhash',
+            'basefee',
+            'blobfee',    
             'coinbase',
             'timestamp',
             'number',
