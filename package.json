@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "description": "A tree sitter parser for Solidity",
   "main": "bindings/node",
+  "types": "index.d.ts",
   "scripts": {
     "test": "tree-sitter generate && tree-sitter test"
   },
@@ -14,6 +15,21 @@
   },
   "devDependencies": {
     "tree-sitter-cli": "^0.21"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "tree sitter",
+    "parser",
+    "evm"
+  ],
+  "bugs": {
+    "url": "https://github.com/JoranHonig/tree-sitter-solidity/issues"
+  },
+  "homepage": "https://github.com/JoranHonig/tree-sitter-solidity#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoranHonig/tree-sitter-solidity.git"
   },
   "tree-sitter": [
     {
