@@ -2328,6 +2328,18 @@
           },
           {
             "type": "STRING",
+            "value": "mcopy"
+          },
+          {
+            "type": "STRING",
+            "value": "tload"
+          },
+          {
+            "type": "STRING",
+            "value": "tstore"
+          },
+          {
+            "type": "STRING",
             "value": "mstore"
           },
           {
@@ -2477,6 +2489,18 @@
           {
             "type": "STRING",
             "value": "blockhash"
+          },
+          {
+            "type": "STRING",
+            "value": "blobhash"
+          },
+          {
+            "type": "STRING",
+            "value": "basefee"
+          },
+          {
+            "type": "STRING",
+            "value": "blobfee"
           },
           {
             "type": "STRING",
@@ -6810,7 +6834,7 @@
               },
               {
                 "type": "PATTERN",
-                "value": "u{[0-9a-fA-F]+}"
+                "value": "u\\{[0-9a-fA-F]+\\}"
               }
             ]
           }
