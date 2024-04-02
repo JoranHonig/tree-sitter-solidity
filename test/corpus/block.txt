@@ -1,0 +1,72 @@
+================================================================================
+Unchecked Block
+================================================================================
+
+contract Example {
+    function test(int256 n) returns (uint256) {
+        unchecked {
+            return uint256(0);
+        }
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        (parameter
+          type: (type_name
+            (primitive_type))
+          name: (identifier))
+        return_type: (return_type_definition
+          (parameter
+            type: (type_name
+              (primitive_type))))
+        body: (function_body
+          (block_statement
+            (unchecked)
+            (return_statement
+              (type_cast_expression
+                (primitive_type)
+                (call_argument
+                  (number_literal))))))))))
+
+================================================================================
+Regular Block
+================================================================================
+
+contract Example {
+    function test(int256 n) returns (uint256) {
+        {
+            return uint256(0);
+        }
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        (parameter
+          type: (type_name
+            (primitive_type))
+          name: (identifier))
+        return_type: (return_type_definition
+          (parameter
+            type: (type_name
+              (primitive_type))))
+        body: (function_body
+          (block_statement
+            (return_statement
+              (type_cast_expression
+                (primitive_type)
+                (call_argument
+                  (number_literal))))))))))
