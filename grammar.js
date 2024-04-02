@@ -919,8 +919,10 @@ module.exports = grammar({
         _mapping: $ => seq(
             'mapping', '(', 
             field("key_type", $._mapping_key), 
+            optional(field('key_identifier', $.identifier)),
             '=>', 
             field("value_type", $.type_name), 
+            optional(field('value_identifier', $.identifier)),
             ')',
         ),
 

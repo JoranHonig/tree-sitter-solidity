@@ -60,3 +60,29 @@ contract StateVariable {
             (identifier)))
         name: (identifier)
         value: (number_literal)))))
+
+================================================================================
+Mapping Declaration
+================================================================================
+
+contract StateVariable {
+    mapping(uint256 x => mapping(uint256 y => bool isFinalized)) test;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (type_name
+          key_type: (primitive_type)
+          key_identifier: (identifier)
+          value_type: (type_name
+            key_type: (primitive_type)
+            key_identifier: (identifier)
+            value_type: (type_name
+              (primitive_type))
+            value_identifier: (identifier)))
+        name: (identifier)))))
