@@ -2286,14 +2286,14 @@
       "required": false,
       "types": [
         {
-          "type": "event_paramater",
+          "type": "event_parameter",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "event_paramater",
+    "type": "event_parameter",
     "named": true,
     "fields": {
       "name": {

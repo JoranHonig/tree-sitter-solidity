@@ -1,6 +1,7 @@
 #include "tree_sitter/parser.h"
 
 #if defined(__GNUC__) || defined(__clang__)
+#pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #endif
 
@@ -372,7 +373,7 @@ enum ts_symbol_identifiers {
   sym_enum_body = 354,
   sym_event_definition = 355,
   sym__event_parameter_list = 356,
-  sym_event_paramater = 357,
+  sym_event_parameter = 357,
   sym_using_directive = 358,
   sym_any_source_type = 359,
   sym__statement = 360,
@@ -889,7 +890,7 @@ static const char * const ts_symbol_names[] = {
   [sym_enum_body] = "enum_body",
   [sym_event_definition] = "event_definition",
   [sym__event_parameter_list] = "_event_parameter_list",
-  [sym_event_paramater] = "event_paramater",
+  [sym_event_parameter] = "event_parameter",
   [sym_using_directive] = "using_directive",
   [sym_any_source_type] = "any_source_type",
   [sym__statement] = "_statement",
@@ -1406,7 +1407,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_enum_body] = sym_enum_body,
   [sym_event_definition] = sym_event_definition,
   [sym__event_parameter_list] = sym__event_parameter_list,
-  [sym_event_paramater] = sym_event_paramater,
+  [sym_event_parameter] = sym_event_parameter,
   [sym_using_directive] = sym_using_directive,
   [sym_any_source_type] = sym_any_source_type,
   [sym__statement] = sym__statement,
@@ -2994,7 +2995,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = true,
   },
-  [sym_event_paramater] = {
+  [sym_event_parameter] = {
     .visible = true,
     .named = true,
   },
@@ -28424,7 +28425,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(3),
   },
   [111] = {
-    [sym_event_paramater] = STATE(587),
+    [sym_event_parameter] = STATE(587),
     [sym_type_name] = STATE(479),
     [sym__array_type] = STATE(318),
     [sym__function_type] = STATE(327),
@@ -29576,7 +29577,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(3),
   },
   [120] = {
-    [sym_event_paramater] = STATE(668),
+    [sym_event_parameter] = STATE(668),
     [sym_type_name] = STATE(479),
     [sym__array_type] = STATE(318),
     [sym__function_type] = STATE(327),
@@ -29704,7 +29705,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(3),
   },
   [121] = {
-    [sym_event_paramater] = STATE(668),
+    [sym_event_parameter] = STATE(668),
     [sym_type_name] = STATE(479),
     [sym__array_type] = STATE(318),
     [sym__function_type] = STATE(327),
@@ -30599,7 +30600,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_comment] = ACTIONS(3),
   },
   [128] = {
-    [sym_event_paramater] = STATE(668),
+    [sym_event_parameter] = STATE(668),
     [sym_type_name] = STATE(479),
     [sym__array_type] = STATE(318),
     [sym__function_type] = STATE(327),
@@ -62811,7 +62812,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [1952] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_hex_string_literal_repeat1, 2),
   [1954] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_hex_string_literal_repeat1, 2), SHIFT_REPEAT(757),
   [1957] = {.entry = {.count = 1, .reusable = false}}, SHIFT(683),
-  [1959] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_event_paramater, 1, .production_id = 14),
+  [1959] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_event_parameter, 1, .production_id = 14),
   [1961] = {.entry = {.count = 1, .reusable = false}}, SHIFT(555),
   [1963] = {.entry = {.count = 1, .reusable = true}}, SHIFT(436),
   [1965] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__class_heritage, 4),
@@ -62914,7 +62915,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [2166] = {.entry = {.count = 1, .reusable = true}}, SHIFT(771),
   [2168] = {.entry = {.count = 1, .reusable = true}}, SHIFT(120),
   [2170] = {.entry = {.count = 1, .reusable = true}}, SHIFT(666),
-  [2172] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_event_paramater, 2, .production_id = 14),
+  [2172] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_event_parameter, 2, .production_id = 14),
   [2174] = {.entry = {.count = 1, .reusable = true}}, SHIFT(125),
   [2176] = {.entry = {.count = 1, .reusable = true}}, SHIFT(312),
   [2178] = {.entry = {.count = 1, .reusable = true}}, SHIFT(592),
@@ -63034,7 +63035,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [2420] = {.entry = {.count = 1, .reusable = false}}, SHIFT(808),
   [2422] = {.entry = {.count = 1, .reusable = true}}, SHIFT(205),
   [2424] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_call_argument, 3),
-  [2426] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_event_paramater, 3, .production_id = 69),
+  [2426] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_event_parameter, 3, .production_id = 69),
   [2428] = {.entry = {.count = 1, .reusable = true}}, SHIFT(550),
   [2430] = {.entry = {.count = 1, .reusable = true}}, SHIFT(161),
   [2432] = {.entry = {.count = 1, .reusable = true}}, SHIFT(383),
@@ -63047,7 +63048,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [2446] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__nameless_parameter, 2, .production_id = 24),
   [2448] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_call_argument, 4),
   [2450] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_return_type_definition, 2),
-  [2452] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_event_paramater, 2, .production_id = 23),
+  [2452] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_event_parameter, 2, .production_id = 23),
   [2454] = {.entry = {.count = 1, .reusable = true}}, SHIFT(49),
   [2456] = {.entry = {.count = 1, .reusable = true}}, SHIFT(81),
   [2458] = {.entry = {.count = 1, .reusable = true}}, SHIFT(569),
@@ -63168,15 +63169,11 @@ static const TSParseActionEntry ts_parse_actions[] = {
 #ifdef __cplusplus
 extern "C" {
 #endif
-#ifdef TREE_SITTER_HIDE_SYMBOLS
-#define TS_PUBLIC
-#elif defined(_WIN32)
-#define TS_PUBLIC __declspec(dllexport)
-#else
-#define TS_PUBLIC __attribute__((visibility("default")))
+#ifdef _WIN32
+#define extern __declspec(dllexport)
 #endif
 
-TS_PUBLIC const TSLanguage *tree_sitter_solidity() {
+extern const TSLanguage *tree_sitter_solidity(void) {
   static const TSLanguage language = {
     .version = LANGUAGE_VERSION,
     .symbol_count = SYMBOL_COUNT,
