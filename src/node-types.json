@@ -1168,6 +1168,10 @@
           "named": true
         },
         {
+          "type": "unchecked",
+          "named": true
+        },
+        {
           "type": "variable_declaration_statement",
           "named": true
         },
@@ -2170,9 +2174,34 @@
     }
   },
   {
+    "type": "enum_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enum_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "enum_declaration",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "enum_body",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -2183,16 +2212,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "enum_value",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -4619,9 +4638,34 @@
     }
   },
   {
+    "type": "struct_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "struct_member",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "struct_declaration",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "struct_body",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -4632,16 +4676,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "struct_member",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -5335,6 +5369,16 @@
     "type": "type_name",
     "named": true,
     "fields": {
+      "key_identifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
       "key_type": {
         "multiple": false,
         "required": false,
@@ -5367,6 +5411,16 @@
           },
           {
             "type": "parameter",
+            "named": true
+          }
+        ]
+      },
+      "value_identifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -7822,6 +7876,10 @@
   {
     "type": "uint96",
     "named": false
+  },
+  {
+    "type": "unchecked",
+    "named": true
   },
   {
     "type": "unicode",

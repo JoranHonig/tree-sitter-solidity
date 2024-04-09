@@ -246,9 +246,7 @@ module.exports = grammar({
         struct_declaration: $ =>  seq(
             'struct',
             field("name", $.identifier),
-            '{',
-            repeat1($.struct_member),
-            '}',
+            field('body', $.struct_body),
         ),
 
         struct_member: $ => seq(
@@ -257,14 +255,23 @@ module.exports = grammar({
             $._semicolon
         ),
 
+        struct_body: $ => seq(
+            '{',
+            repeat1($.struct_member),
+            '}',
+        ),
+
         enum_declaration: $ =>  seq(
             'enum',
             field("name", $.identifier),
+            field('body', $.enum_body),
+        ),
+
+        enum_body: $ => seq(
             '{',
             commaSep(alias($.identifier, $.enum_value)),
             '}',
         ),
-
 
         event_definition: $ => seq(
             'event', 
@@ -479,8 +486,13 @@ module.exports = grammar({
         )),
 
         // -- [ Statements ] --
-        _unchecked: $ => "unchecked",
-        block_statement: $ => seq(optional($._unchecked), '{', repeat($._statement), "}"),
+        unchecked: $ => "unchecked",
+        block_statement: $ => seq(
+            optional($.unchecked), 
+            '{', 
+            repeat($._statement), 
+            "}"
+        ),
         variable_declaration_statement: $ => prec(1,seq(
                 choice(
                     seq($.variable_declaration, optional(seq('=', field("value", $._expression)))),
@@ -919,8 +931,10 @@ module.exports = grammar({
         _mapping: $ => seq(
             'mapping', '(', 
             field("key_type", $._mapping_key), 
+            optional(field('key_identifier', $.identifier)),
             '=>', 
             field("value_type", $.type_name), 
+            optional(field('value_identifier', $.identifier)),
             ')',
         ),
 
