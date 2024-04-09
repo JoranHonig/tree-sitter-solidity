@@ -13,8 +13,8 @@ enum example {
   (enum_declaration
     name: (identifier)
     body: (enum_body
-      (enum_value))
-      (enum_value)))
+      (enum_value)
+      (enum_value))))
 
 ================================================================================
 Enum Declarations One Option
