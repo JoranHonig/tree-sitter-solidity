@@ -1168,6 +1168,10 @@
           "named": true
         },
         {
+          "type": "unchecked",
+          "named": true
+        },
+        {
           "type": "variable_declaration_statement",
           "named": true
         },
@@ -5365,6 +5369,16 @@
     "type": "type_name",
     "named": true,
     "fields": {
+      "key_identifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
       "key_type": {
         "multiple": false,
         "required": false,
@@ -5397,6 +5411,16 @@
           },
           {
             "type": "parameter",
+            "named": true
+          }
+        ]
+      },
+      "value_identifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -7852,6 +7876,10 @@
   {
     "type": "uint96",
     "named": false
+  },
+  {
+    "type": "unchecked",
+    "named": true
   },
   {
     "type": "unicode",

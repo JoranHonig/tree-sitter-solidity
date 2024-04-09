@@ -486,8 +486,13 @@ module.exports = grammar({
         )),
 
         // -- [ Statements ] --
-        _unchecked: $ => "unchecked",
-        block_statement: $ => seq(optional($._unchecked), '{', repeat($._statement), "}"),
+        unchecked: $ => "unchecked",
+        block_statement: $ => seq(
+            optional($.unchecked), 
+            '{', 
+            repeat($._statement), 
+            "}"
+        ),
         variable_declaration_statement: $ => prec(1,seq(
                 choice(
                     seq($.variable_declaration, optional(seq('=', field("value", $._expression)))),
@@ -926,8 +931,10 @@ module.exports = grammar({
         _mapping: $ => seq(
             'mapping', '(', 
             field("key_type", $._mapping_key), 
+            optional(field('key_identifier', $.identifier)),
             '=>', 
             field("value_type", $.type_name), 
+            optional(field('value_identifier', $.identifier)),
             ')',
         ),
 
