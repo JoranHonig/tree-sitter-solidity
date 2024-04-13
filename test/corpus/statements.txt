@@ -75,7 +75,8 @@ contract Example {
         (function_body
           (block_statement
             (expression_statement
-              (number_literal))))))))
+              (expression
+                (number_literal)))))))))
 
 ================================================================================
 If statement
@@ -105,30 +106,43 @@ contract Example {
         (identifier)
         (function_body
           (if_statement
-            (identifier)
+            (expression
+              (identifier))
             (block_statement))
           (if_statement
-            (identifier)
+            (expression
+              (identifier))
             (block_statement)
             (block_statement
               (expression_statement
-                (identifier))))
+                (expression
+                  (identifier)))))
           (if_statement
-            (identifier)
+            (expression
+              (identifier))
             (expression_statement
-              (number_literal)))
+              (expression
+                (number_literal))))
           (if_statement
-            (binary_expression
-              (identifier)
-              (number_literal))
-            (if_statement
+            (expression
               (binary_expression
-                (identifier)
-                (number_literal))
+                (expression
+                  (identifier))
+                (expression
+                  (number_literal))))
+            (if_statement
+              (expression
+                (binary_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (number_literal))))
               (expression_statement
-                (number_literal))
+                (expression
+                  (number_literal)))
               (expression_statement
-                (number_literal)))))))))
+                (expression
+                  (number_literal))))))))))
 
 ================================================================================
 For statement
@@ -157,33 +171,53 @@ contract Example {
                 (type_name
                   (primitive_type))
                 (identifier))
-              (number_literal))
+              (expression
+                (number_literal)))
             (expression_statement
-              (update_expression
-                (identifier)))
-            (binary_expression
-              (identifier)
-              (number_literal))
+              (expression
+                (update_expression
+                  (expression
+                    (identifier)))))
+            (expression
+              (binary_expression
+                (expression
+                  (identifier))
+                (expression
+                  (number_literal))))
             (expression_statement
-              (update_expression
-                (identifier))))
+              (expression
+                (update_expression
+                  (expression
+                    (identifier))))))
           (for_statement
             (expression_statement
-              (update_expression
-                (identifier)))
-            (binary_expression
-              (identifier)
-              (number_literal))
+              (expression
+                (update_expression
+                  (expression
+                    (identifier)))))
+            (expression
+              (binary_expression
+                (expression
+                  (identifier))
+                (expression
+                  (number_literal))))
             (expression_statement
-              (update_expression
-                (identifier))))
+              (expression
+                (update_expression
+                  (expression
+                    (identifier))))))
           (for_statement
-            (binary_expression
-              (identifier)
-              (number_literal))
+            (expression
+              (binary_expression
+                (expression
+                  (identifier))
+                (expression
+                  (number_literal))))
             (expression_statement
-              (update_expression
-                (identifier)))))))))
+              (expression
+                (update_expression
+                  (expression
+                    (identifier)))))))))))
 
 ================================================================================
 While statement
@@ -205,8 +239,9 @@ contract Example {
         (identifier)
         (function_body
           (while_statement
-            (boolean_literal
-              (true))
+            (expression
+              (boolean_literal
+                (true)))
             (return_statement)))))))
 
 ================================================================================
@@ -232,8 +267,9 @@ contract Example {
         (identifier)
         (function_body
           (while_statement
-            (boolean_literal
-              (true))
+            (expression
+              (boolean_literal
+                (true)))
             (block_statement
               (break_statement)
               (continue_statement))))))))
@@ -262,16 +298,20 @@ contract Example {
         (identifier)
         (function_body
           (try_statement
-            (call_expression
-              (identifier))
+            (expression
+              (call_expression
+                (expression
+                  (identifier))))
             (parameter
               (type_name
                 (primitive_type))
               (identifier))
             (block_statement
               (expression_statement
-                (update_expression
-                  (identifier))))
+                (expression
+                  (update_expression
+                    (expression
+                      (identifier))))))
             (catch_clause
               (identifier)
               (parameter
@@ -280,8 +320,10 @@ contract Example {
                 (identifier))
               (block_statement
                 (expression_statement
-                  (update_expression
-                    (identifier)))))))))))
+                  (expression
+                    (update_expression
+                      (expression
+                        (identifier)))))))))))))
 
 ================================================================================
 Return statement
@@ -322,7 +364,8 @@ contract Example {
         (identifier)
         (function_body
           (emit_statement
-            (identifier)))))))
+            (expression
+              (identifier))))))))
 
 ================================================================================
 Assembly statement
@@ -343,4 +386,5 @@ contract Example {
         (identifier)
         (function_body
           (emit_statement
-            (identifier)))))))
+            (expression
+              (identifier))))))))

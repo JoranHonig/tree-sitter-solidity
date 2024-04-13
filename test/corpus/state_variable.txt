@@ -35,7 +35,8 @@ contract StateVariable {
         type: (type_name
           (primitive_type))
         name: (identifier)
-        value: (number_literal)))))
+        value: (expression
+          (number_literal))))))
 
 ================================================================================
 Variable Declaration
@@ -59,7 +60,8 @@ contract StateVariable {
             (identifier)
             (identifier)))
         name: (identifier)
-        value: (number_literal)))))
+        value: (expression
+          (number_literal))))))
 
 ================================================================================
 Mapping Declaration
