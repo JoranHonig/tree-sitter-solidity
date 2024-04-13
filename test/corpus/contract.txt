@@ -74,5 +74,6 @@ contract Example is NotAContract(), AContract(1) {}
       ancestor: (user_defined_type
         (identifier))
       ancestor_arguments: (call_argument
-        (number_literal)))
+        (expression
+          (number_literal))))
     body: (contract_body)))

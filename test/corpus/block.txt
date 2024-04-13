@@ -30,10 +30,12 @@ contract Example {
           (block_statement
             (unchecked)
             (return_statement
-              (type_cast_expression
-                (primitive_type)
-                (call_argument
-                  (number_literal))))))))))
+              (expression
+                (type_cast_expression
+                  (primitive_type)
+                  (call_argument
+                    (expression
+                      (number_literal))))))))))))
 
 ================================================================================
 Regular Block
@@ -66,7 +68,9 @@ contract Example {
         body: (function_body
           (block_statement
             (return_statement
-              (type_cast_expression
-                (primitive_type)
-                (call_argument
-                  (number_literal))))))))))
+              (expression
+                (type_cast_expression
+                  (primitive_type)
+                  (call_argument
+                    (expression
+                      (number_literal))))))))))))

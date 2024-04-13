@@ -18,7 +18,8 @@ contract Example {
         name: (identifier)
         body: (function_body
           (expression_statement
-            (number_literal)))))))
+            (expression
+              (number_literal))))))))
 
 ================================================================================
 String Literal
@@ -40,8 +41,9 @@ contract Example {
         name: (identifier)
         body: (function_body
           (expression_statement
-            (string_literal
-              (string))))))))
+            (expression
+              (string_literal
+                (string)))))))))
 
 ================================================================================
 Double String Literal
@@ -63,9 +65,10 @@ contract Example {
         name: (identifier)
         body: (function_body
           (expression_statement
-            (string_literal
-              (string)
-              (string))))))))
+            (expression
+              (string_literal
+                (string)
+                (string)))))))))
 
 ================================================================================
 String Literal Escapes
@@ -90,17 +93,21 @@ contract Example {
         name: (identifier)
         body: (function_body
           (expression_statement
-            (string_literal
-              (string)))
+            (expression
+              (string_literal
+                (string))))
           (expression_statement
-            (string_literal
-              (string)))
+            (expression
+              (string_literal
+                (string))))
           (expression_statement
-            (string_literal
-              (string)))
+            (expression
+              (string_literal
+                (string))))
           (expression_statement
-            (string_literal
-              (string))))))))
+            (expression
+              (string_literal
+                (string)))))))))
 
 ================================================================================
 Hex String Literal
@@ -123,9 +130,11 @@ contract Example {
         name: (identifier)
         body: (function_body
           (expression_statement
-            (hex_string_literal))
+            (expression
+              (hex_string_literal)))
           (expression_statement
-            (hex_string_literal)))))))
+            (expression
+              (hex_string_literal))))))))
 
 ================================================================================
 Unicode String Literal
@@ -148,9 +157,11 @@ contract Example {
         name: (identifier)
         body: (function_body
           (expression_statement
-            (unicode_string_literal))
+            (expression
+              (unicode_string_literal)))
           (expression_statement
-            (unicode_string_literal)))))))
+            (expression
+              (unicode_string_literal))))))))
 
 ================================================================================
 Bool Literal
@@ -173,8 +184,10 @@ contract Example {
         name: (identifier)
         body: (function_body
           (expression_statement
-            (boolean_literal
-              (true)))
+            (expression
+              (boolean_literal
+                (true))))
           (expression_statement
-            (boolean_literal
-              (false))))))))
+            (expression
+              (boolean_literal
+                (false)))))))))
