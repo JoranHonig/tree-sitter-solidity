@@ -29,7 +29,8 @@ function test() {
     (identifier)
     (function_body
       (revert_statement
-        (identifier)
+        (expression
+          (identifier))
         (revert_arguments)))))
 
 ================================================================================
@@ -47,8 +48,10 @@ function test() {
     (identifier)
     (function_body
       (revert_statement
-        (parenthesized_expression
-          (identifier))))))
+        (expression
+          (parenthesized_expression
+            (expression
+              (identifier))))))))
 
 ================================================================================
 Very old revert
