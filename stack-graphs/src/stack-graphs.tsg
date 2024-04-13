@@ -33,8 +33,6 @@ attribute node_symbol = node            => symbol = (source-text node), source_n
 ;; ^^^^^^^^^^^^^^^^^
 
 
-;; todo - 1: make expression and other nodes public so its possible to make the following rules complete
-;; without too much duplicate code
 ;; todo - 2: stack graph -> member access ( only after todo - 1 )
 
 ;;;;;;;;
@@ -149,15 +147,3 @@ attribute node_symbol = node            => symbol = (source-text node), source_n
 
   edge reference -> @expr.lexical_scope
 }
-
-;(expression_statement (expression (call_expression) @call_expr) ) @stmt {
-;  edge @call_expr.lexical_scope -> @stmt.lexical_scope
-;  edge @call_expr.lexical_scope -> @stmt.lexical_defs
-;}
-
-;(call_expression function: (expression (identifier))@name ) @expression {
-;  node reference
-;  attr (reference) node_reference = @name
-;
-;  edge reference -> @expression.lexical_scope
-;}
