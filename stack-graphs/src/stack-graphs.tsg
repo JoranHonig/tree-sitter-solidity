@@ -116,12 +116,12 @@ attribute node_symbol = node            => symbol = (source-text node), source_n
   node @expr.lexical_scope
 }
 
-(expression_statement (call_expression) @call_expr) @stmt {
+(expression_statement (expression (call_expression) @call_expr) ) @stmt {
   edge @call_expr.lexical_scope -> @stmt.lexical_scope
   edge @call_expr.lexical_scope -> @stmt.lexical_defs
 }
 
-(call_expression function: (identifier)@name ) @expression {
+(call_expression function: (expression (identifier))@name ) @expression {
   node reference
   attr (reference) node_reference = @name
 
