@@ -32,6 +32,11 @@ attribute node_symbol = node            => symbol = (source-text node), source_n
 ;; Stack Graph Rules - variable resolution
 ;; ^^^^^^^^^^^^^^^^^
 
+
+;; todo - 1: make expression and other nodes public so its possible to make the following rules complete
+;; without too much duplicate code
+;; todo - 2: stack graph -> member access ( only after todo - 1 )
+
 ;;;;;;;;
 ;; Contracts
 
