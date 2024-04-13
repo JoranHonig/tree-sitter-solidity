@@ -40,18 +40,18 @@
 (type_name "(" @punctuation.bracket "=>" @punctuation.delimiter ")" @punctuation.bracket)
 
 ; Definitions
-(struct_declaration 
+(struct_declaration
   name: (identifier) @type)
-(enum_declaration 
+(enum_declaration
   name: (identifier) @type)
 (contract_declaration
-  name: (identifier) @type) 
+  name: (identifier) @type)
 (library_declaration
-  name: (identifier) @type) 
+  name: (identifier) @type)
 (interface_declaration
   name: (identifier) @type)
-(event_definition 
-  name: (identifier) @type) 
+(event_definition
+  name: (identifier) @type)
 
 (function_definition
   name:  (identifier) @function)
@@ -68,15 +68,15 @@
 (struct_member name: (identifier) @property)
 (enum_value) @constant
 
-; Invocations 
-(emit_statement . (identifier) @type)
+; Invocations
+(emit_statement . (_) @type)
 (modifier_invocation (identifier) @function)
 
-(call_expression . (member_expression property: (identifier) @function.method))
-(call_expression . (identifier) @function)
+(call_expression . (_(member_expression property: (_) @function.method)))
+(call_expression . (expression(identifier)) @function)
 
 ; Function parameters
-(call_struct_argument name: (identifier) @field)
+(call_struct_argument name: (_) @field)
 (event_parameter name: (identifier) @parameter)
 (parameter name: (identifier) @variable.parameter)
 
@@ -87,7 +87,7 @@
 
 ; Structs and members
 (member_expression property: (identifier) @property)
-(struct_expression type: ((identifier) @type .))
+(struct_expression type: ((expression(identifier)) @type .))
 (struct_field_assignment name: (identifier) @property)
 
 
