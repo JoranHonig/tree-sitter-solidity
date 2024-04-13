@@ -1,15 +1,17 @@
 contract Test {
+  uint st;
   function a() {
    a();
-// ^ defined: 2
+// ^ defined: 3
   }
 
   function b() {
     a();
-//  ^ defined: 2
+//  ^ defined: 3
   }
 
   function c() {
-
+    st = 1;
+  // ^ defined: 2
   }
 }

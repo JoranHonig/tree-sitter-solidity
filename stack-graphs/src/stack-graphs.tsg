@@ -62,10 +62,13 @@ attribute node_symbol = node            => symbol = (source-text node), source_n
       edge @statement.lexical_scope -> @contract.lexical_defs
 }
 
-(function_definition body: (function_body (_)@body_stmt))@func {
+;; hook the first statement in a body up to the lexical scope of the function
+(function_definition body: (function_body . (_)@body_stmt))@func {
   edge @body_stmt.lexical_scope -> @func.lexical_scope
   edge @body_stmt.lexical_scope -> @func.lexical_defs
 }
+
+
 ;;;;;;;;
 ;; Statements
 
@@ -79,6 +82,17 @@ attribute node_symbol = node            => symbol = (source-text node), source_n
   edge @right.lexical_scope -> @left.lexical_defs
 
   attr (@right.lexical_scope -> @left.lexical_defs) precedence = 1
+}
+
+(statement (_)@inner) @outer {
+  node @inner.lexical_scope
+  node @inner.lexical_defs
+
+  edge @inner.lexical_scope -> @outer.lexical_scope
+}
+
+(statement (_(expression)@expr)) @stmt {
+  edge @expr.lexical_scope -> @stmt.lexical_scope
 }
 
 (state_variable_declaration) @stmt {
@@ -107,23 +121,43 @@ attribute node_symbol = node            => symbol = (source-text node), source_n
   edge @variable_declaration.lexical_defs -> definition
 }
 
+(contract_declaration (_ (state_variable_declaration) @var_decl)) @contract {
+  edge @contract.lexical_scope -> @var_decl.lexical_defs
+}
+
 
 ;;;;;;;;
 ;; expressions
+(expression (_) @inner ) @expr {
+  node @expr.lexical_scope
+  node @inner.lexical_scope
+
+  edge @inner.lexical_scope -> @expr.lexical_scope
+}
+(_ (expression) @expr) @outer {
+  edge @expr.lexical_scope -> @outer.lexical_scope
+}
+
 
 (call_expression) @expr {
   node @expr.lexical_defs
-  node @expr.lexical_scope
 }
 
-(expression_statement (expression (call_expression) @call_expr) ) @stmt {
-  edge @call_expr.lexical_scope -> @stmt.lexical_scope
-  edge @call_expr.lexical_scope -> @stmt.lexical_defs
-}
-
-(call_expression function: (expression (identifier))@name ) @expression {
+(expression (identifier) @name ) @expr {
   node reference
   attr (reference) node_reference = @name
 
-  edge reference -> @expression.lexical_scope
+  edge reference -> @expr.lexical_scope
 }
+
+;(expression_statement (expression (call_expression) @call_expr) ) @stmt {
+;  edge @call_expr.lexical_scope -> @stmt.lexical_scope
+;  edge @call_expr.lexical_scope -> @stmt.lexical_defs
+;}
+
+;(call_expression function: (expression (identifier))@name ) @expression {
+;  node reference
+;  attr (reference) node_reference = @name
+;
+;  edge reference -> @expression.lexical_scope
+;}
