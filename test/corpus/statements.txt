@@ -128,6 +128,7 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
+                (binaryOperator)
                 (expression
                   (number_literal))))
             (if_statement
@@ -135,6 +136,7 @@ contract Example {
                 (binary_expression
                   (expression
                     (identifier))
+                  (binaryOperator)
                   (expression
                     (number_literal))))
               (expression_statement
@@ -182,6 +184,7 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
+                (binaryOperator)
                 (expression
                   (number_literal))))
             (expression_statement
@@ -199,6 +202,7 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
+                (binaryOperator)
                 (expression
                   (number_literal))))
             (expression_statement
@@ -211,6 +215,7 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
+                (binaryOperator)
                 (expression
                   (number_literal))))
             (expression_statement

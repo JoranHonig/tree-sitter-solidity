@@ -214,88 +214,8 @@
         "required": true,
         "types": [
           {
-            "type": "!=",
-            "named": false
-          },
-          {
-            "type": "!==",
-            "named": false
-          },
-          {
-            "type": "%",
-            "named": false
-          },
-          {
-            "type": "&",
-            "named": false
-          },
-          {
-            "type": "&&",
-            "named": false
-          },
-          {
-            "type": "*",
-            "named": false
-          },
-          {
-            "type": "**",
-            "named": false
-          },
-          {
-            "type": "+",
-            "named": false
-          },
-          {
-            "type": "-",
-            "named": false
-          },
-          {
-            "type": "/",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": "<<",
-            "named": false
-          },
-          {
-            "type": "<=",
-            "named": false
-          },
-          {
-            "type": "==",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": ">=",
-            "named": false
-          },
-          {
-            "type": ">>",
-            "named": false
-          },
-          {
-            "type": ">>>",
-            "named": false
-          },
-          {
-            "type": "^",
-            "named": false
-          },
-          {
-            "type": "|",
-            "named": false
-          },
-          {
-            "type": "||",
-            "named": false
+            "type": "binaryOperator",
+            "named": true
           }
         ]
       },
@@ -3253,14 +3173,6 @@
     "named": false
   },
   {
-    "type": "!=",
-    "named": false
-  },
-  {
-    "type": "!==",
-    "named": false
-  },
-  {
     "type": "\"",
     "named": false
   },
@@ -3269,19 +3181,7 @@
     "named": false
   },
   {
-    "type": "%",
-    "named": false
-  },
-  {
     "type": "%=",
-    "named": false
-  },
-  {
-    "type": "&",
-    "named": false
-  },
-  {
-    "type": "&&",
     "named": false
   },
   {
@@ -3302,10 +3202,6 @@
   },
   {
     "type": "*",
-    "named": false
-  },
-  {
-    "type": "**",
     "named": false
   },
   {
@@ -3349,10 +3245,6 @@
     "named": false
   },
   {
-    "type": "/",
-    "named": false
-  },
-  {
     "type": "/=",
     "named": false
   },
@@ -3369,10 +3261,6 @@
     "named": false
   },
   {
-    "type": "<<",
-    "named": false
-  },
-  {
     "type": "<<=",
     "named": false
   },
@@ -3382,10 +3270,6 @@
   },
   {
     "type": "=",
-    "named": false
-  },
-  {
-    "type": "==",
     "named": false
   },
   {
@@ -3401,15 +3285,7 @@
     "named": false
   },
   {
-    "type": ">>",
-    "named": false
-  },
-  {
     "type": ">>=",
-    "named": false
-  },
-  {
-    "type": ">>>",
     "named": false
   },
   {
@@ -3475,6 +3351,10 @@
   {
     "type": "balance",
     "named": false
+  },
+  {
+    "type": "binaryOperator",
+    "named": true
   },
   {
     "type": "blockhash",
@@ -4462,10 +4342,6 @@
   },
   {
     "type": "{",
-    "named": false
-  },
-  {
-    "type": "|",
     "named": false
   },
   {

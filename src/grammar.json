@@ -4320,8 +4320,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "&&"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "&&"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4353,8 +4358,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "||"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "||"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4386,8 +4396,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": ">>"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": ">>"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4419,8 +4434,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": ">>>"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": ">>>"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4452,8 +4472,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "<<"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "<<"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4485,8 +4510,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "&"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "&"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4518,8 +4548,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "^"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "^"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4551,8 +4586,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "|"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "|"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4584,8 +4624,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "+"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "+"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4617,8 +4662,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "-"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "-"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4650,8 +4700,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "*"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "*"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4683,8 +4738,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "/"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "/"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4716,8 +4776,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "%"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "%"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4749,8 +4814,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "**"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "**"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4782,8 +4852,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "<"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "<"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4815,8 +4890,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "<="
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "<="
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4848,8 +4928,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "=="
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "=="
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4881,8 +4966,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "!="
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "!="
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4914,8 +5004,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "!=="
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "!=="
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4947,8 +5042,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": ">="
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": ">="
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
@@ -4980,8 +5080,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": ">"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": ">"
+                  },
+                  "named": true,
+                  "value": "binaryOperator"
                 }
               },
               {
