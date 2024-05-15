@@ -79,3 +79,15 @@ contract Example {
             (event_parameter 
               type: (type_name (primitive_type))
               name: (identifier))))))
+
+====================
+File level event
+====================
+
+event Exx();
+
+---
+
+(source_file
+  (event_definition
+    name: (identifier)))
