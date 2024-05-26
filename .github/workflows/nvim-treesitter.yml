@@ -28,6 +28,6 @@ jobs:
     - name: pull queries from nvim-treesitter
       run: |
        wget "https://raw.githubusercontent.com/nvim-treesitter/nvim-treesitter/master/queries/solidity/highlights.scm" -o ./queries/highlights-nvim.scm
-       wget "https://raw.githubusercontent.com/nvim-treesitter/nvim-treesitter/master/queries/solidity/folds.scm" -o /queries/folds-nvim.scm
+       wget "https://raw.githubusercontent.com/nvim-treesitter/nvim-treesitter/master/queries/solidity/folds.scm" -o ./queries/folds-nvim.scm
     - run: yarn
     - run: yarn test
