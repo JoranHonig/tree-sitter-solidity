@@ -1,0 +1,33 @@
+name: nvim-treesitter queries
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      run: |
+        npm install yarn -g
+        npm install tree-sitter-cli -g
+    - name: Generate tree-sitter parser
+      run: tree-sitter generate
+    - name: pull queries from nvim-treesitter
+      run: |
+       wget "https://raw.githubusercontent.com/nvim-treesitter/nvim-treesitter/master/queries/solidity/highlights.scm" -o ./queries/highlights-nvim.scm
+       wget "https://raw.githubusercontent.com/nvim-treesitter/nvim-treesitter/master/queries/solidity/folds.scm" -o /queries/folds-nvim.scm
+    - run: yarn
+    - run: yarn test
