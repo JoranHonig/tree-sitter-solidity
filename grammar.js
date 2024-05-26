@@ -160,6 +160,7 @@ module.exports = grammar({
             $.function_definition,
             $.constant_variable_declaration,
             $.user_defined_type_definition,
+            $.event_definition,
         ),
 
         user_defined_type_definition: $ => seq(
