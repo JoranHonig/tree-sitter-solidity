@@ -1,4 +1,4 @@
-VERSION := 0.0.1
+VERSION := 1.2.6
 
 LANGUAGE_NAME := tree-sitter-solidity
 
