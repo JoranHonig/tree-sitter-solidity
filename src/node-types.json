@@ -1961,6 +1961,10 @@
           "named": true
         },
         {
+          "type": "event_definition",
+          "named": true
+        },
+        {
           "type": "function_definition",
           "named": true
         },

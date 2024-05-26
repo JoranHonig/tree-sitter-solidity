@@ -465,6 +465,10 @@
         {
           "type": "SYMBOL",
           "name": "user_defined_type_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_definition"
         }
       ]
     },
