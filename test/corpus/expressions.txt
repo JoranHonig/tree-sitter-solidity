@@ -172,7 +172,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (number_literal))
-                operator: (binary_operator)
                 right: (expression
                   (number_literal)))))
           (expression_statement
@@ -185,7 +184,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (identifier)))))
           (expression_statement
@@ -193,7 +191,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (identifier)))))
           (expression_statement
@@ -201,7 +198,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (identifier))))))))))
 
@@ -385,7 +381,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (call_expression
                     function: (expression
@@ -421,7 +416,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (identifier)))))
           (expression_statement
@@ -429,7 +423,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (identifier)))))
           (comment)
@@ -438,7 +431,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (identifier)))))
           (expression_statement
@@ -446,7 +438,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (identifier)))))
           (expression_statement
@@ -454,7 +445,6 @@ contract Example {
               (binary_expression
                 left: (expression
                   (identifier))
-                operator: (binary_operator)
                 right: (expression
                   (identifier))))))))))
 
@@ -487,7 +477,6 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
-                (binary_operator)
                 (expression
                   (identifier)))))
           (expression_statement
@@ -495,7 +484,6 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
-                (binary_operator)
                 (expression
                   (identifier)))))
           (expression_statement
@@ -503,7 +491,6 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
-                (binary_operator)
                 (expression
                   (identifier)))))
           (expression_statement
@@ -511,7 +498,6 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
-                (binary_operator)
                 (expression
                   (identifier)))))
           (expression_statement
@@ -519,7 +505,6 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
-                (binary_operator)
                 (expression
                   (identifier)))))
           (expression_statement
@@ -527,7 +512,6 @@ contract Example {
               (binary_expression
                 (expression
                   (identifier))
-                (binary_operator)
                 (expression
                   (identifier))))))))))
 
