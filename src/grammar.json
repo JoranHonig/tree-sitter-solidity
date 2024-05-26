@@ -4326,7 +4326,7 @@
                     "value": "&&"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4364,7 +4364,7 @@
                     "value": "||"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4402,7 +4402,7 @@
                     "value": ">>"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4440,7 +4440,7 @@
                     "value": ">>>"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4478,7 +4478,7 @@
                     "value": "<<"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4516,7 +4516,7 @@
                     "value": "&"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4554,7 +4554,7 @@
                     "value": "^"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4592,7 +4592,7 @@
                     "value": "|"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4630,7 +4630,7 @@
                     "value": "+"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4668,7 +4668,7 @@
                     "value": "-"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4706,7 +4706,7 @@
                     "value": "*"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4744,7 +4744,7 @@
                     "value": "/"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4782,7 +4782,7 @@
                     "value": "%"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4820,7 +4820,7 @@
                     "value": "**"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4858,7 +4858,7 @@
                     "value": "<"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4896,7 +4896,7 @@
                     "value": "<="
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4934,7 +4934,7 @@
                     "value": "=="
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -4972,7 +4972,7 @@
                     "value": "!="
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -5010,7 +5010,7 @@
                     "value": "!=="
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -5048,7 +5048,7 @@
                     "value": ">="
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
@@ -5086,7 +5086,7 @@
                     "value": ">"
                   },
                   "named": true,
-                  "value": "binaryOperator"
+                  "value": "binary_operator"
                 }
               },
               {
