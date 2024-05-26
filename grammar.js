@@ -789,7 +789,7 @@ module.exports = grammar({
             ].map(([operator, precedence]) =>
                 prec.left(precedence, seq(
                     field('left', $.expression),
-                    field('operator', alias(operator, $.binary_operator)),
+                    field('operator', operator),
                     field('right', $.expression)
                 ))
             )
