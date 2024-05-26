@@ -3481,6 +3481,18 @@
     "named": false
   },
   {
+    "type": "basefee",
+    "named": false
+  },
+  {
+    "type": "blobfee",
+    "named": false
+  },
+  {
+    "type": "blobhash",
+    "named": false
+  },
+  {
     "type": "blockhash",
     "named": false
   },
@@ -4053,6 +4065,10 @@
     "named": false
   },
   {
+    "type": "mcopy",
+    "named": false
+  },
+  {
     "type": "memory",
     "named": false
   },
@@ -4261,11 +4277,19 @@
     "named": false
   },
   {
+    "type": "tload",
+    "named": false
+  },
+  {
     "type": "true",
     "named": false
   },
   {
     "type": "try",
+    "named": false
+  },
+  {
+    "type": "tstore",
     "named": false
   },
   {
