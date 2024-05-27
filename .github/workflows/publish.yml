@@ -11,7 +11,8 @@ concurrency:
 jobs:
   npm:
     uses: tree-sitter/workflows/.github/workflows/package-npm.yml@main
-    node_version: v20.11.1
+    with:
+      node-version: v20.11.1
     secrets:
       NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   crates:
