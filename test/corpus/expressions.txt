@@ -20,50 +20,54 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (variable_declaration_statement
-            (variable_declaration
-              type: (type_name
-                (primitive_type))
-              name: (identifier)))
-          (expression_statement
-            (expression
-              (member_expression
-                object: (identifier)
-                property: (identifier))))
-          (variable_declaration_statement
-            (variable_declaration
-              type: (type_name
-                (user_defined_type
-                  (identifier)))
-              name: (identifier))
-            value: (expression
-              (call_expression
-                function: (expression
-                  (new_expression
-                    name: (type_name
-                      (user_defined_type
-                        (identifier)))))
-                (call_argument
-                  (expression
-                    (number_literal))))))
-          (variable_declaration_statement
-            (variable_declaration
-              type: (type_name
-                (type_name
+          (statement
+            (variable_declaration_statement
+              (variable_declaration
+                type: (type_name
+                  (primitive_type))
+                name: (identifier))))
+          (statement
+            (expression_statement
+              (expression
+                (member_expression
+                  object: (identifier)
+                  property: (identifier)))))
+          (statement
+            (variable_declaration_statement
+              (variable_declaration
+                type: (type_name
                   (user_defined_type
-                    (identifier))))
-              name: (identifier))
-            value: (expression
-              (call_expression
-                function: (expression
-                  (new_expression
-                    name: (type_name
-                      (type_name
+                    (identifier)))
+                name: (identifier))
+              value: (expression
+                (call_expression
+                  function: (expression
+                    (new_expression
+                      name: (type_name
                         (user_defined_type
-                          (identifier))))))
-                (call_argument
-                  (expression
-                    (number_literal)))))))))))
+                          (identifier)))))
+                  (call_argument
+                    (expression
+                      (number_literal)))))))
+          (statement
+            (variable_declaration_statement
+              (variable_declaration
+                type: (type_name
+                  (type_name
+                    (user_defined_type
+                      (identifier))))
+                name: (identifier))
+              value: (expression
+                (call_expression
+                  function: (expression
+                    (new_expression
+                      name: (type_name
+                        (type_name
+                          (user_defined_type
+                            (identifier))))))
+                  (call_argument
+                    (expression
+                      (number_literal))))))))))))
 
 ================================================================================
 Subscript Access
@@ -84,13 +88,14 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (array_access
-                base: (expression
-                  (identifier))
-                index: (expression
-                  (number_literal))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (array_access
+                  base: (expression
+                    (identifier))
+                  index: (expression
+                    (number_literal)))))))))))
 
 ================================================================================
 Slice Access
@@ -111,13 +116,14 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (slice_access
-                base: (expression
-                  (identifier))
-                from: (expression
-                  (number_literal))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (slice_access
+                  base: (expression
+                    (identifier))
+                  from: (expression
+                    (number_literal)))))))))))
 
 ================================================================================
 Parenthesized expression
@@ -138,11 +144,12 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (parenthesized_expression
-                (expression
-                  (number_literal))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (parenthesized_expression
+                  (expression
+                    (number_literal)))))))))))
 
 ================================================================================
 Maths expression
@@ -167,39 +174,44 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (number_literal))
-                right: (expression
-                  (number_literal)))))
-          (expression_statement
-            (expression
-              (update_expression
-                argument: (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (identifier))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (number_literal))
+                  right: (expression
+                    (number_literal))))))
+          (statement
+            (expression_statement
+              (expression
+                (update_expression
+                  argument: (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (identifier)))))))))))
 
 ================================================================================
 Struct expression
@@ -220,15 +232,16 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (struct_expression
-                type: (expression
-                  (identifier))
-                (struct_field_assignment
-                  name: (identifier)
-                  value: (expression
-                    (identifier)))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (struct_expression
+                  type: (expression
+                    (identifier))
+                  (struct_field_assignment
+                    name: (identifier)
+                    value: (expression
+                      (identifier))))))))))))
 
 ================================================================================
 Call
@@ -250,28 +263,30 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (call_expression
-                function: (expression
-                  (identifier))
-                (call_argument
-                  (expression
-                    (identifier))))))
-          (expression_statement
-            (expression
-              (call_expression
-                function: (expression
-                  (identifier))
-                (call_argument
-                  (call_struct_argument
-                    name: (identifier)
-                    value: (expression
-                      (identifier)))
-                  (call_struct_argument
-                    name: (identifier)
-                    value: (expression
-                      (identifier))))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (call_expression
+                  function: (expression
+                    (identifier))
+                  (call_argument
+                    (expression
+                      (identifier)))))))
+          (statement
+            (expression_statement
+              (expression
+                (call_expression
+                  function: (expression
+                    (identifier))
+                  (call_argument
+                    (call_struct_argument
+                      name: (identifier)
+                      value: (expression
+                        (identifier)))
+                    (call_struct_argument
+                      name: (identifier)
+                      value: (expression
+                        (identifier)))))))))))))
 
 ================================================================================
 Payable conversion
@@ -292,12 +307,13 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (payable_conversion_expression
-                (call_argument
-                  (expression
-                    (identifier)))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (payable_conversion_expression
+                  (call_argument
+                    (expression
+                      (identifier))))))))))))
 
 ================================================================================
 increment and unary
@@ -319,16 +335,18 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (update_expression
-                argument: (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (unary_expression
-                argument: (expression
-                  (identifier))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (update_expression
+                  argument: (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (unary_expression
+                  argument: (expression
+                    (identifier)))))))))))
 
 ================================================================================
 call and unary
@@ -349,13 +367,14 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (unary_expression
-                argument: (expression
-                  (call_expression
-                    function: (expression
-                      (identifier))))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (unary_expression
+                  argument: (expression
+                    (call_expression
+                      function: (expression
+                        (identifier)))))))))))))
 
 ================================================================================
 call and binary
@@ -376,15 +395,16 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (call_expression
-                    function: (expression
-                      (identifier))))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (call_expression
+                      function: (expression
+                        (identifier)))))))))))))
 
 ================================================================================
 Boolean logic
@@ -411,42 +431,47 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (identifier)))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (identifier))))))
           (comment)
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                left: (expression
-                  (identifier))
-                right: (expression
-                  (identifier))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  left: (expression
+                    (identifier))
+                  right: (expression
+                    (identifier)))))))))))
 
 ================================================================================
 Comparisons
@@ -472,48 +497,54 @@ contract Example {
       (function_definition
         (identifier)
         (function_body
-          (expression_statement
-            (expression
-              (binary_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (binary_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (binary_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier)))))))))))
 
 ================================================================================
 Update expression
@@ -538,41 +569,46 @@ contract Example {
       (function_definition
         (identifier)
         (function_body
-          (expression_statement
-            (expression
-              (assignment_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (augmented_assignment_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (augmented_assignment_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (augmented_assignment_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (augmented_assignment_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (assignment_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (augmented_assignment_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (augmented_assignment_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (augmented_assignment_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (augmented_assignment_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier)))))))))))
 
 ================================================================================
 Special Expression types
@@ -597,34 +633,40 @@ contract Example {
       (function_definition
         (identifier)
         (function_body
-          (expression_statement
-            (expression
-              (tuple_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier)))))
-          (expression_statement
-            (expression
-              (inline_array_expression
-                (expression
-                  (number_literal))
-                (expression
-                  (number_literal)))))
-          (expression_statement
-            (expression
-              (identifier)))
-          (expression_statement
-            (expression
-              (number_literal)))
-          (expression_statement
-            (expression
-              (member_expression
-                (identifier)
+          (statement
+            (expression_statement
+              (expression
+                (tuple_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))))))
+          (statement
+            (expression_statement
+              (expression
+                (inline_array_expression
+                  (expression
+                    (number_literal))
+                  (expression
+                    (number_literal))))))
+          (statement
+            (expression_statement
+              (expression
                 (identifier))))
-          (expression_statement
-            (expression
-              (primitive_type))))))))
+          (statement
+            (expression_statement
+              (expression
+                (number_literal))))
+          (statement
+            (expression_statement
+              (expression
+                (member_expression
+                  (identifier)
+                  (identifier)))))
+          (statement
+            (expression_statement
+              (expression
+                (primitive_type)))))))))
 
 ================================================================================
 New expression
@@ -644,12 +686,13 @@ contract Example {
       (function_definition
         (identifier)
         (function_body
-          (expression_statement
-            (expression
-              (new_expression
-                (type_name
-                  (user_defined_type
-                    (identifier)))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (new_expression
+                  (type_name
+                    (user_defined_type
+                      (identifier))))))))))))
 
 ================================================================================
 Ternary expression
@@ -669,15 +712,16 @@ contract Example {
       (function_definition
         (identifier)
         (function_body
-          (expression_statement
-            (expression
-              (ternary_expression
-                (expression
-                  (identifier))
-                (expression
-                  (identifier))
-                (expression
-                  (identifier))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (ternary_expression
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier))
+                  (expression
+                    (identifier)))))))))))
 
 ================================================================================
 Type cast
@@ -697,13 +741,14 @@ contract Example {
       (function_definition
         (identifier)
         (function_body
-          (expression_statement
-            (expression
-              (type_cast_expression
-                (primitive_type)
-                (call_argument
-                  (expression
-                    (number_literal)))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (type_cast_expression
+                  (primitive_type)
+                  (call_argument
+                    (expression
+                      (number_literal))))))))))))
 
 ================================================================================
 Type Expression
@@ -723,17 +768,18 @@ contract Example {
       (function_definition
         (identifier)
         (function_body
-          (expression_statement
-            (expression
-              (array_access
-                (expression
-                  (array_access
-                    (expression
-                      (primitive_type))
-                    (expression
-                      (number_literal))))
-                (expression
-                  (number_literal))))))))))
+          (statement
+            (expression_statement
+              (expression
+                (array_access
+                  (expression
+                    (array_access
+                      (expression
+                        (primitive_type))
+                      (expression
+                        (number_literal))))
+                  (expression
+                    (number_literal)))))))))))
 
 ================================================================================
 Type Cast Expression Nested (TODO: Solidity specification is wrong here fix it)
@@ -757,19 +803,20 @@ contract Example {
             (primitive_type))
           (identifier))
         (function_body
-          (expression_statement
-            (expression
-              (call_expression
-                (expression
-                  (array_access
-                    (expression
-                      (array_access
-                        (expression
-                          (primitive_type))
-                        (expression
-                          (number_literal))))
-                    (expression
-                      (number_literal))))
-                (call_argument
+          (statement
+            (expression_statement
+              (expression
+                (call_expression
                   (expression
-                    (identifier)))))))))))
+                    (array_access
+                      (expression
+                        (array_access
+                          (expression
+                            (primitive_type))
+                          (expression
+                            (number_literal))))
+                      (expression
+                        (number_literal))))
+                  (call_argument
+                    (expression
+                      (identifier))))))))))))

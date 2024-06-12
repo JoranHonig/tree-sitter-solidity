@@ -17,9 +17,10 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (number_literal))))))))
+          (statement
+            (expression_statement
+              (expression
+                (number_literal)))))))))
 
 ================================================================================
 String Literal
@@ -40,10 +41,11 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (string_literal
-                (string)))))))))
+          (statement
+            (expression_statement
+              (expression
+                (string_literal
+                  (string))))))))))
 
 ================================================================================
 Double String Literal
@@ -64,11 +66,12 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (string_literal
-                (string)
-                (string)))))))))
+          (statement
+            (expression_statement
+              (expression
+                (string_literal
+                  (string)
+                  (string))))))))))
 
 ================================================================================
 String Literal Escapes
@@ -92,22 +95,26 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (string_literal
-                (string))))
-          (expression_statement
-            (expression
-              (string_literal
-                (string))))
-          (expression_statement
-            (expression
-              (string_literal
-                (string))))
-          (expression_statement
-            (expression
-              (string_literal
-                (string)))))))))
+          (statement
+            (expression_statement
+              (expression
+                (string_literal
+                  (string)))))
+          (statement
+            (expression_statement
+              (expression
+                (string_literal
+                  (string)))))
+          (statement
+            (expression_statement
+              (expression
+                (string_literal
+                  (string)))))
+          (statement
+            (expression_statement
+              (expression
+                (string_literal
+                  (string))))))))))
 
 ================================================================================
 Hex String Literal
@@ -129,12 +136,14 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (hex_string_literal)))
-          (expression_statement
-            (expression
-              (hex_string_literal))))))))
+          (statement
+            (expression_statement
+              (expression
+                (hex_string_literal))))
+          (statement
+            (expression_statement
+              (expression
+                (hex_string_literal)))))))))
 
 ================================================================================
 Unicode String Literal
@@ -156,12 +165,14 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (unicode_string_literal)))
-          (expression_statement
-            (expression
-              (unicode_string_literal))))))))
+          (statement
+            (expression_statement
+              (expression
+                (unicode_string_literal))))
+          (statement
+            (expression_statement
+              (expression
+                (unicode_string_literal)))))))))
 
 ================================================================================
 Bool Literal
@@ -183,11 +194,13 @@ contract Example {
       (function_definition
         name: (identifier)
         body: (function_body
-          (expression_statement
-            (expression
-              (boolean_literal
-                (true))))
-          (expression_statement
-            (expression
-              (boolean_literal
-                (false)))))))))
+          (statement
+            (expression_statement
+              (expression
+                (boolean_literal
+                  (true)))))
+          (statement
+            (expression_statement
+              (expression
+                (boolean_literal
+                  (false))))))))))

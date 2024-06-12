@@ -18,11 +18,12 @@ contract Example {
     (contract_body
       (fallback_receive_definition
         (function_body
-          (assembly_statement
-            (yul_function_call
-              (yul_evm_builtin)
-              (yul_hex_number)
-              (yul_hex_number))))))))
+          (statement
+            (assembly_statement
+              (yul_function_call
+                (yul_evm_builtin)
+                (yul_hex_number)
+                (yul_hex_number)))))))))
 
 ================================================================================
 Assembly Flags
@@ -44,13 +45,14 @@ contract Example {
     (contract_body
       (fallback_receive_definition
         (function_body
-          (assembly_statement
-            (assembly_flags
-              (string))
-            (yul_function_call
-              (yul_evm_builtin)
-              (yul_hex_number)
-              (yul_hex_number))))))))
+          (statement
+            (assembly_statement
+              (assembly_flags
+                (string))
+              (yul_function_call
+                (yul_evm_builtin)
+                (yul_hex_number)
+                (yul_hex_number)))))))))
 
 ================================================================================
 Assembly switch
@@ -75,18 +77,19 @@ contract Example {
     (contract_body
       (fallback_receive_definition
         (function_body
-          (assembly_statement
-            (yul_switch_statement
-              (yul_path
-                (yul_identifier
-                  (identifier)))
-              (yul_decimal_number)
-              (yul_block
-                (yul_function_call
-                  (yul_evm_builtin)
-                  (yul_path
-                    (yul_identifier
-                      (identifier))))))))))))
+          (statement
+            (assembly_statement
+              (yul_switch_statement
+                (yul_path
+                  (yul_identifier
+                    (identifier)))
+                (yul_decimal_number)
+                (yul_block
+                  (yul_function_call
+                    (yul_evm_builtin)
+                    (yul_path
+                      (yul_identifier
+                        (identifier)))))))))))))
 
 ================================================================================
 Assembly Assignment
@@ -109,12 +112,13 @@ contract Example {
     (contract_body
       (fallback_receive_definition
         (function_body
-          (assembly_statement
-            (yul_assignment
-              (yul_path
-                (yul_identifier
-                  (identifier)))
-              (yul_decimal_number))))))))
+          (statement
+            (assembly_statement
+              (yul_assignment
+                (yul_path
+                  (yul_identifier
+                    (identifier)))
+                (yul_decimal_number)))))))))
 
 ================================================================================
 Builtin Functions
@@ -136,12 +140,13 @@ contract Example {
     (contract_body
       (fallback_receive_definition
         (function_body
-          (assembly_statement
-            (yul_function_call
-              (yul_evm_builtin)
+          (statement
+            (assembly_statement
               (yul_function_call
-                (yul_evm_builtin))
-              (yul_decimal_number))))))))
+                (yul_evm_builtin)
+                (yul_function_call
+                  (yul_evm_builtin))
+                (yul_decimal_number)))))))))
 
 ================================================================================
 Labels
@@ -164,11 +169,12 @@ contract Example {
     (contract_body
       (fallback_receive_definition
         (function_body
-          (assembly_statement
-            (yul_label
-              (identifier))
-            (yul_function_call
-              (yul_evm_builtin)
+          (statement
+            (assembly_statement
+              (yul_label
+                (identifier))
               (yul_function_call
-                (yul_evm_builtin))
-              (yul_decimal_number))))))))
+                (yul_evm_builtin)
+                (yul_function_call
+                  (yul_evm_builtin))
+                (yul_decimal_number)))))))))

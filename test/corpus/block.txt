@@ -27,15 +27,17 @@ contract Example {
             type: (type_name
               (primitive_type))))
         body: (function_body
-          (block_statement
-            (unchecked)
-            (return_statement
-              (expression
-                (type_cast_expression
-                  (primitive_type)
-                  (call_argument
-                    (expression
-                      (number_literal))))))))))))
+          (statement
+            (block_statement
+              (unchecked)
+              (statement
+                (return_statement
+                  (expression
+                    (type_cast_expression
+                      (primitive_type)
+                      (call_argument
+                        (expression
+                          (number_literal))))))))))))))
 
 ================================================================================
 Regular Block
@@ -66,11 +68,13 @@ contract Example {
             type: (type_name
               (primitive_type))))
         body: (function_body
-          (block_statement
-            (return_statement
-              (expression
-                (type_cast_expression
-                  (primitive_type)
-                  (call_argument
-                    (expression
-                      (number_literal))))))))))))
+          (statement
+            (block_statement
+              (statement
+                (return_statement
+                  (expression
+                    (type_cast_expression
+                      (primitive_type)
+                      (call_argument
+                        (expression
+                          (number_literal))))))))))))))

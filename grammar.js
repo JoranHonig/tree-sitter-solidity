@@ -305,7 +305,7 @@ module.exports = grammar({
         any_source_type: $ => '*',
 
         // -- [ Statements ] --
-        _statement: $ => choice(
+        statement: $ => choice(
             $.block_statement,
             $.expression_statement,
             $.variable_declaration_statement,
@@ -497,7 +497,7 @@ module.exports = grammar({
         block_statement: $ => seq(
             optional($.unchecked),
             '{',
-            repeat($._statement),
+            repeat($.statement),
             "}"
         ),
         variable_declaration_statement: $ => prec(1,seq(
@@ -533,12 +533,12 @@ module.exports = grammar({
             'if', '(',
             field("condition", $.expression),
             ')',
-            field("body", $._statement),
+            field("body", $.statement),
             field("else",
                 optional(
                     seq(
                         'else',
-                        field("body", $._statement)
+                        field("body", $.statement)
                 ))
             ),
         )),
@@ -548,14 +548,14 @@ module.exports = grammar({
             field("initial", choice($.variable_declaration_statement, $.expression_statement, $._semicolon)),
             field("condition", choice($.expression_statement, $._semicolon)),
             field("update", optional($.expression)),
-            ')', field("body", $._statement),
+            ')', field("body", $.statement),
         ),
 
         while_statement: $ => seq(
-            'while', '(',field("condition", $.expression), ')', field("body", $._statement),
+            'while', '(',field("condition", $.expression), ')', field("body", $.statement),
         ),
         do_while_statement: $ => seq(
-            'do', field("body", $._statement), 'while', '(', field("condition", $.expression), ')', $._semicolon,
+            'do', field("body", $.statement), 'while', '(', field("condition", $.expression), ')', $._semicolon,
         ),
         continue_statement: $ => seq('continue', $._semicolon),
         break_statement: $ => seq('break', $._semicolon),
@@ -722,7 +722,7 @@ module.exports = grammar({
 
         function_body: $ => seq(
             "{",
-                repeat($._statement),
+                repeat($.statement),
             "}",
         ),
 

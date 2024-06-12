@@ -28,10 +28,11 @@ function test() {
   (function_definition
     (identifier)
     (function_body
-      (revert_statement
-        (expression
-          (identifier))
-        (revert_arguments)))))
+      (statement
+        (revert_statement
+          (expression
+            (identifier))
+          (revert_arguments))))))
 
 ================================================================================
 Revert regularly
@@ -47,11 +48,12 @@ function test() {
   (function_definition
     (identifier)
     (function_body
-      (revert_statement
-        (expression
-          (parenthesized_expression
-            (expression
-              (identifier))))))))
+      (statement
+        (revert_statement
+          (expression
+            (parenthesized_expression
+              (expression
+                (identifier)))))))))
 
 ================================================================================
 Very old revert
@@ -67,4 +69,5 @@ function test() {
   (function_definition
     (identifier)
     (function_body
-      (revert_statement))))
+      (statement
+        (revert_statement)))))
