@@ -556,7 +556,7 @@ contract Example {
         a |= b;
         a /= c;
         a %= d;
-        a >>>= d;
+        a >>= d;
     }
 }
 
