@@ -1,31 +1,31 @@
 // Precedence is used by the parser to determine which rule to apply when there are two rules that can be applied.
 // We use the PREC dict to globally define rule precedence
+// [N] corresponds to precedence table at https://docs.soliditylang.org/en/v0.8.24/cheatsheet.html#order-of-precedence-of-operators
 const PREC = {
     COMMENT: 1,
     STRING: 2,
 
-    COMMA: -1,
+    COMMA: -1, // [15] Comma operator
     OBJECT: -1,
     USER_TYPE: 1,
     DECLARATION: 1,
-    ASSIGN: 0,
-    TERNARY: 1,
-    OR: 2,
-    AND: 3,
-    REL: 4,
-    PLUS: 5,
-    TIMES: 6,
-    EXP: 7,
-    TYPEOF: 8,
-    DELETE: 8,
-    VOID: 8,
-    NOT: 9,
-    NEG: 10,
-    INC: 11,
-    CALL: 12,
-    NEW: 13,
-    REVERT: 14,
-    MEMBER: 1
+    TERNARY: 0, // [14] Ternary operator
+    ASSIGN: 0, // [14] Assignment operators
+    LOGICAL_OR: 1, // [13] Logical OR
+    LOGICAL_AND: 2, // [12] Logical AND
+    REL_EQ: 3, // [11] Equality operators
+    REL_INEQ: 4, // [10] Inequality operators
+    BITWISE_OR: 5, // [9] Bitwise OR
+    BITWISE_XOR: 6, // [8] Bitwise XOR
+    BITWISE_AND: 7, // [7] Bitwise AND
+    BITWISE_SHIFT: 8, // [6] Bitwise shift operators
+    PLUS: 9, // [5] Addition and substraction
+    TIMES: 10, // [4] Multiplication, division and modulo
+    EXP: 11, // [3] Exponentiation
+    PREFIX_UNARY: 12, // [2]
+    POSTFIX_UNARY: 13, // [1]
+    CALL: 13, // ??
+    REVERT: 13, // ??
 }
 
 // The following is the core grammar for Solidity. It accepts Solidity smart contracts between the versions 0.4.x and 0.7.x.
@@ -771,27 +771,36 @@ module.exports = grammar({
 
         binary_expression: $ => choice(
             ...[
-            ['&&', PREC.AND],
-            ['||', PREC.OR],
-            ['>>', PREC.TIMES],
-            ['>>>', PREC.TIMES],
-            ['<<', PREC.TIMES],
-            ['&', PREC.AND],
-            ['^', PREC.OR],
-            ['|', PREC.OR],
+            // [13] Logical OR
+            ['||', PREC.LOGICAL_OR],
+            // [12] Logical AND
+            ['&&', PREC.LOGICAL_AND],
+            // [11] Equality operators
+            ['==', PREC.REL_EQ],
+            ['!=', PREC.REL_EQ],
+            // [10] Inequality operators
+            ['<', PREC.REL_INEQ],
+            ['>', PREC.REL_INEQ],
+            ['<=', PREC.REL_INEQ],
+            ['>=', PREC.REL_INEQ],
+            // [9] Bitwise OR
+            ['|', PREC.BITWISE_OR],
+            // [8] Bitwise XOR
+            ['^', PREC.BITWISE_XOR],
+            // [7] Bitwise AND
+            ['&', PREC.BITWISE_AND],
+            // [6] Bitwise shift operators
+            ['<<', PREC.BITWISE_SHIFT],
+            ['>>', PREC.BITWISE_SHIFT],
+            // [5] Addition and subtraction
             ['+', PREC.PLUS],
             ['-', PREC.PLUS],
+            // [4] Multiplication, division and modulo
             ['*', PREC.TIMES],
             ['/', PREC.TIMES],
             ['%', PREC.TIMES],
+            // [3] Exponentiation
             ['**', PREC.EXP],
-            ['<', PREC.REL],
-            ['<=', PREC.REL],
-            ['==', PREC.REL],
-            ['!=', PREC.REL],
-            ['!==', PREC.REL],
-            ['>=', PREC.REL],
-            ['>', PREC.REL],
             ].map(([operator, precedence]) =>
                 prec.left(precedence, seq(
                     field('left', $.expression),
@@ -802,11 +811,14 @@ module.exports = grammar({
         ),
 
         unary_expression: $ => choice(...[
-                ['!', PREC.NOT],
-                ['~', PREC.NOT],
-                ['-', PREC.NEG],
-                ['+', PREC.NEG],
-                ['delete', PREC.DELETE],
+                // [2] Unary minus
+                ['-', PREC.PREFIX_UNARY],
+                // [2] Unary operations
+                ['delete', PREC.PREFIX_UNARY],
+                // [2] Bitwise NOT
+                ['!', PREC.PREFIX_UNARY],
+                // [2] Bitwise NOT
+                ['~', PREC.PREFIX_UNARY],
             ].map(([operator, precedence]) =>
                 prec.left(precedence, seq(
                     field('operator', operator),
@@ -814,16 +826,16 @@ module.exports = grammar({
                 ))
         )),
 
-        update_expression: $ => prec.left(PREC.INC, choice(
-            seq(
+        update_expression: $ => choice(
+            prec.left(PREC.POSTFIX_UNARY, seq(
                 field('argument', $.expression),
                 field('operator', choice('++', '--'))
-            ),
-            seq(
+            )),
+            prec.left(PREC.PREFIX_UNARY, seq(
                 field('operator', choice('++', '--')),
                 field('argument', $.expression)
-            ),
-        )),
+            )),
+        ),
 
         member_expression: $ => prec.dynamic(1, seq(
             field('object', choice(
@@ -873,8 +885,7 @@ module.exports = grammar({
 
         augmented_assignment_expression: $ => prec.right(PREC.ASSIGN, seq(
             field('left', $.expression),
-            choice('+=', '-=', '*=', '/=', '%=', '^=', '&=', '|=', '>>=', '>>>=',
-                '<<=',),
+            choice('+=', '-=', '*=', '/=', '%=', '^=', '&=', '|=', '>>=', '<<=',),
             field('right', $.expression)
         )),
 
