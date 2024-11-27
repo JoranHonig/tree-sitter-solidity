@@ -3368,6 +3368,14 @@
               {
                 "type": "SYMBOL",
                 "name": "immutable"
+              },
+              {
+                "type": "FIELD",
+                "name": "location",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "state_location"
+                }
               }
             ]
           }
@@ -3446,6 +3454,15 @@
         {
           "type": "STRING",
           "value": "payable"
+        }
+      ]
+    },
+    "state_location": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "transient"
         }
       ]
     },

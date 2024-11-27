@@ -1817,6 +1817,11 @@
     }
   },
   {
+    "type": "state_location",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "state_mutability",
     "named": true,
     "fields": {}
@@ -1825,6 +1830,16 @@
     "type": "state_variable_declaration",
     "named": true,
     "fields": {
+      "location": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_location",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -4022,6 +4037,10 @@
   },
   {
     "type": "tload",
+    "named": false
+  },
+  {
+    "type": "transient",
     "named": false
   },
   {

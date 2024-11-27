@@ -484,7 +484,7 @@ module.exports = grammar({
             'blockhash',
             'blobhash',
             'basefee',
-            'blobfee',    
+            'blobfee',
             'coinbase',
             'timestamp',
             'number',
@@ -605,6 +605,7 @@ module.exports = grammar({
                 "constant",
                 $.override_specifier,
                 $.immutable,
+                field('location', $.state_location)
             )),
             field("name", $.identifier),
             optional(seq(
@@ -623,6 +624,10 @@ module.exports = grammar({
             'pure',
             'view',
             'payable'
+        ),
+
+        state_location: $ => choice(
+          "transient"
         ),
 
         immutable: $ => 'immutable',
@@ -1137,4 +1142,3 @@ function optionalDashSeparation(rule) {
         ),
     );
 }
-
