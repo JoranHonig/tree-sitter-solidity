@@ -28,18 +28,6 @@
     "tree-sitter-cli": "^0.22.4",
     "prebuildify": "^6.0.0"
   },
-  "tree-sitter": [
-    {
-      "scope": "source.sol",
-      "file-types": [
-        "sol"
-      ],
-      "highlights": [
-        "queries/highlights.scm"
-      ],
-      "injection-regex": "^(sol|solidity)$"
-    }
-  ],
   "files": [
     "grammar.js",
     "binding.gyp",

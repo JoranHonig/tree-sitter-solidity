@@ -1006,6 +1006,10 @@
         "required": true,
         "types": [
           {
+            "type": ";",
+            "named": false
+          },
+          {
             "type": "expression_statement",
             "named": true
           }
@@ -1015,6 +1019,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
           {
             "type": "expression_statement",
             "named": true
@@ -1751,6 +1759,7 @@
   {
     "type": "source_file",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -3105,6 +3114,10 @@
   },
   {
     "type": ":=",
+    "named": false
+  },
+  {
+    "type": ";",
     "named": false
   },
   {
