@@ -218,10 +218,6 @@
             "named": false
           },
           {
-            "type": "!==",
-            "named": false
-          },
-          {
             "type": "%",
             "named": false
           },
@@ -279,10 +275,6 @@
           },
           {
             "type": ">>",
-            "named": false
-          },
-          {
-            "type": ">>>",
             "named": false
           },
           {
@@ -1014,6 +1006,10 @@
         "required": true,
         "types": [
           {
+            "type": ";",
+            "named": false
+          },
+          {
             "type": "expression_statement",
             "named": true
           }
@@ -1023,6 +1019,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
           {
             "type": "expression_statement",
             "named": true
@@ -1759,6 +1759,7 @@
   {
     "type": "source_file",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -1816,6 +1817,11 @@
     }
   },
   {
+    "type": "state_location",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "state_mutability",
     "named": true,
     "fields": {}
@@ -1824,6 +1830,16 @@
     "type": "state_variable_declaration",
     "named": true,
     "fields": {
+      "location": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_location",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -2321,10 +2337,6 @@
         "types": [
           {
             "type": "!",
-            "named": false
-          },
-          {
-            "type": "+",
             "named": false
           },
           {
@@ -3016,10 +3028,6 @@
     "named": false
   },
   {
-    "type": "!==",
-    "named": false
-  },
-  {
     "type": "\"",
     "named": false
   },
@@ -3124,6 +3132,10 @@
     "named": false
   },
   {
+    "type": ";",
+    "named": false
+  },
+  {
     "type": "<",
     "named": false
   },
@@ -3165,14 +3177,6 @@
   },
   {
     "type": ">>=",
-    "named": false
-  },
-  {
-    "type": ">>>",
-    "named": false
-  },
-  {
-    "type": ">>>=",
     "named": false
   },
   {
@@ -4033,6 +4037,10 @@
   },
   {
     "type": "tload",
+    "named": false
+  },
+  {
+    "type": "transient",
     "named": false
   },
   {
