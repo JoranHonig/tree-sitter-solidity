@@ -169,10 +169,10 @@ tar-stream@^2.1.4:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
 
-tree-sitter-cli@^0.22.4:
-  version "0.22.6"
-  resolved "https://registry.npmjs.org/tree-sitter-cli/-/tree-sitter-cli-0.22.6.tgz"
-  integrity sha512-s7mYOJXi8sIFkt/nLJSqlYZP96VmKTc3BAwIX0rrrlRxWjWuCwixFqwzxWZBQz4R8Hx01iP7z3cT3ih58BUmZQ==
+tree-sitter-cli@^0.24.4:
+  version "0.24.5"
+  resolved "https://registry.npmjs.org/tree-sitter-cli/-/tree-sitter-cli-0.24.5.tgz"
+  integrity sha512-8EIgV/ERQlpvk1rPSCCjxveAb6Sba8tMiBpeeL68Mueuuqr0wNfhps/I1nFm2OTnpPCUV2PS9nbzzAMoyxSQUg==
 
 tree-sitter@^0.21.0:
   version "0.21.1"
