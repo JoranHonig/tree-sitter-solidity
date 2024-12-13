@@ -1,44 +1,58 @@
-//! This crate provides solidity language support for the [tree-sitter][] parsing library.
+//! This crate provides Solidity language support for the [tree-sitter][] parsing library.
 //!
-//! Typically, you will use the [language][language func] function to add this language to a
+//! Typically, you will use the [LANGUAGE][] constant to add this language to a
 //! tree-sitter [Parser][], and then use the parser to parse some code:
 //!
 //! ```
-//! let code = "";
-//! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(tree_sitter_solidity::language()).expect("Error loading solidity grammar");
+//! use tree_sitter::Parser;
+//!
+//! let code = r#"
+//! function double(x) {
+//!     return x * 2;
+//! }
+//! "#;
+//! let mut parser = Parser::new();
+//! let language = tree_sitter_solidity::LANGUAGE;
+//! parser
+//!     .set_language(&language.into())
+//!     .expect("Error loading Solidity parser");
 //! let tree = parser.parse(code, None).unwrap();
+//! assert!(!tree.root_node().has_error());
 //! ```
 //!
-//! [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
-//! [language func]: fn.language.html
 //! [Parser]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Parser.html
 //! [tree-sitter]: https://tree-sitter.github.io/
 
-use tree_sitter::Language;
+use tree_sitter_language::LanguageFn;
 
 extern "C" {
-    fn tree_sitter_solidity() -> Language;
+    fn tree_sitter_solidity() -> *const ();
 }
 
-/// Get the tree-sitter [Language][] for this grammar.
+/// The tree-sitter [`LanguageFn`][LanguageFn] for this grammar.
 ///
-/// [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
-pub fn language() -> Language {
-    unsafe { tree_sitter_solidity() }
-}
+/// [LanguageFn]: https://docs.rs/tree-sitter-language/*/tree_sitter_language/struct.LanguageFn.html
+pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_solidity) };
 
 /// The content of the [`node-types.json`][] file for this grammar.
 ///
 /// [`node-types.json`]: https://tree-sitter.github.io/tree-sitter/using-parsers#static-node-types
-pub const NODE_TYPES: &'static str = include_str!("../../src/node-types.json");
+pub const NODE_TYPES: &str = include_str!("../../src/node-types.json");
 
-// Uncomment these to include any queries that this grammar contains
+/// The syntax highlighting query for this language.
+pub const HIGHLIGHT_QUERY: &str = include_str!("../../queries/highlights.scm");
 
-// pub const HIGHLIGHTS_QUERY: &'static str = include_str!("../../queries/highlights.scm");
-// pub const INJECTIONS_QUERY: &'static str = include_str!("../../queries/injections.scm");
-// pub const LOCALS_QUERY: &'static str = include_str!("../../queries/locals.scm");
-// pub const TAGS_QUERY: &'static str = include_str!("../../queries/tags.scm");
+/// The syntax highlighting query for languages injected into this one.
+// pub const INJECTIONS_QUERY: &str = include_str!("../../queries/injections.scm");
+
+/// The syntax highlighting query for JSX.
+// pub const JSX_HIGHLIGHT_QUERY: &str = include_str!("../../queries/highlights-jsx.scm");
+
+/// The local-variable syntax highlighting query for this language.
+pub const LOCALS_QUERY: &str = include_str!("../../queries/locals.scm");
+
+/// The symbol tagging query for this language.
+pub const TAGS_QUERY: &str = include_str!("../../queries/tags.scm");
 
 #[cfg(test)]
 mod tests {
@@ -46,7 +60,7 @@ mod tests {
     fn test_can_load_grammar() {
         let mut parser = tree_sitter::Parser::new();
         parser
-            .set_language(super::language())
-            .expect("Error loading solidity language");
+            .set_language(&super::LANGUAGE.into())
+            .expect("Error loading Solidity parser");
     }
 }
