@@ -1,4 +1,4 @@
-VERSION := 1.2.6
+VERSION := 1.2.10
 
 LANGUAGE_NAME := tree-sitter-solidity
 
@@ -22,6 +22,12 @@ SONAME_MAJOR := $(word 1,$(subst ., ,$(VERSION)))
 SONAME_MINOR := $(word 2,$(subst ., ,$(VERSION)))
 
 # install directory layout
+
+# use alternative directory if homebrew is installed
+ifneq ("$(wildcard /opt/homebrew))", "")
+  PREFIX ?= /opt/homebrew
+endif
+
 PREFIX ?= /usr/local
 INCLUDEDIR ?= $(PREFIX)/include
 LIBDIR ?= $(PREFIX)/lib
@@ -33,31 +39,29 @@ OBJS := $(patsubst %.c,%.o,$(wildcard $(SRC_DIR)/*.c))
 # flags
 ARFLAGS := rcs
 override CFLAGS += -I$(SRC_DIR) -std=c11 -fPIC
+LDFLAGS += -L$(LIBDIR)
 
 # OS-specific bits
 ifeq ($(OS),Windows_NT)
-	$(error "Windows is not supported")
+  $(error "Windows is not supported")
 else ifeq ($(shell uname),Darwin)
-	SOEXT = dylib
-	SOEXTVER_MAJOR = $(SONAME_MAJOR).dylib
-	SOEXTVER = $(SONAME_MAJOR).$(SONAME_MINOR).dylib
-	LINKSHARED := $(LINKSHARED)-dynamiclib -Wl,
-	ifneq ($(ADDITIONAL_LIBS),)
-	LINKSHARED := $(LINKSHARED)$(ADDITIONAL_LIBS),
-	endif
-	LINKSHARED := $(LINKSHARED)-install_name,$(LIBDIR)/lib$(LANGUAGE_NAME).$(SONAME_MAJOR).dylib,-rpath,@executable_path/../Frameworks
+  SOEXT = dylib
+  SOEXTVER_MAJOR = $(SONAME_MAJOR).dylib
+  SOEXTVER = $(SONAME_MAJOR).$(SONAME_MINOR).dylib
+  LINKSHARED := $(LINKSHARED)-dynamiclib -Wl,
+  ifneq ($(ADDITIONAL_LIBS),)
+    LINKSHARED := $(LINKSHARED)$(ADDITIONAL_LIBS),
+  endif
+  LINKSHARED := $(LINKSHARED)-install_name,$(LIBDIR)/lib$(LANGUAGE_NAME).$(SONAME_MAJOR).dylib,-rpath,@executable_path/../Frameworks
 else
-	SOEXT = so
-	SOEXTVER_MAJOR = so.$(SONAME_MAJOR)
-	SOEXTVER = so.$(SONAME_MAJOR).$(SONAME_MINOR)
-	LINKSHARED := $(LINKSHARED)-shared -Wl,
-	ifneq ($(ADDITIONAL_LIBS),)
-	LINKSHARED := $(LINKSHARED)$(ADDITIONAL_LIBS)
-	endif
-	LINKSHARED := $(LINKSHARED)-soname,lib$(LANGUAGE_NAME).so.$(SONAME_MAJOR)
-endif
-ifneq ($(filter $(shell uname),FreeBSD NetBSD DragonFly),)
-	PCLIBDIR := $(PREFIX)/libdata/pkgconfig
+  SOEXT = so
+  SOEXTVER_MAJOR = so.$(SONAME_MAJOR)
+  SOEXTVER = so.$(SONAME_MAJOR).$(SONAME_MINOR)
+  LINKSHARED := $(LINKSHARED)-shared -Wl,
+  ifneq ($(ADDITIONAL_LIBS),)
+    LINKSHARED := $(LINKSHARED)$(ADDITIONAL_LIBS)
+  endif
+  LINKSHARED := $(LINKSHARED)-soname,lib$(LANGUAGE_NAME).so.$(SONAME_MAJOR)
 endif
 
 all: lib$(LANGUAGE_NAME).a lib$(LANGUAGE_NAME).$(SOEXT) $(LANGUAGE_NAME).pc
