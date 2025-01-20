@@ -23,7 +23,7 @@ SONAME_MINOR := $(word 2,$(subst ., ,$(VERSION)))
 
 # install directory layout
 
-# use alternative directory if home
+# use alternative directory if homebrew is installed
 ifneq ("$(wildcard /opt/homebrew))", "")
   PREFIX ?= /opt/homebrew
 endif
