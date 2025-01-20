@@ -15,7 +15,7 @@
     }
   ],
   "metadata": {
-    "version": "1.2.10",
+    "version": "1.2.11",
     "license": "MIT",
     "description": "A tree sitter parser for Solidity",
     "authors": [
