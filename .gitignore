@@ -6,7 +6,6 @@
 node_modules/
 
 .vscode/
-index.js
 
 # Rust
 Cargo.lock
