@@ -21,21 +21,14 @@ TS ?= tree-sitter
 SONAME_MAJOR := $(word 1,$(subst ., ,$(VERSION)))
 SONAME_MINOR := $(word 2,$(subst ., ,$(VERSION)))
 
-# Detect OS and Architecture for HOMEBREW_PREFIX
-ifeq ($(shell uname -s),Darwin)
-  ifeq ($(shell uname -m),arm64)
-    # Apple Silicon
-    HOMEBREW_PREFIX ?= /opt/homebrew
-  else
-    # Intel
-    HOMEBREW_PREFIX ?= /usr/local
-  endif
-else
-  HOMEBREW_PREFIX ?= /usr/local
+# install directory layout
+
+# use alternative directory if home
+ifneq ("$(wildcard /opt/homebrew))", "")
+  PREFIX ?= /opt/homebrew
 endif
 
-# install directory layout
-PREFIX ?= $(HOMEBREW_PREFIX)
+PREFIX ?= /usr/local
 INCLUDEDIR ?= $(PREFIX)/include
 LIBDIR ?= $(PREFIX)/lib
 PCLIBDIR ?= $(LIBDIR)/pkgconfig
