@@ -28,8 +28,8 @@ jobs:
     - name: pull queries from helix
       working-directory: ./queries
       run: |
-       wget "https://raw.githubusercontent.com/beeb/helix/refs/heads/master/runtime/queries/solidity/highlights.scm"
-       wget "https://raw.githubusercontent.com/beeb/helix/refs/heads/master/runtime/queries/solidity/locals.scm"
-       wget "https://raw.githubusercontent.com/beeb/helix/refs/heads/master/runtime/queries/solidity/textobjects.scm"
+       wget "https://raw.githubusercontent.com/helix-editor/helix/refs/heads/master/runtime/queries/solidity/highlights.scm"
+       wget "https://raw.githubusercontent.com/helix-editor/helix/refs/heads/master/runtime/queries/solidity/locals.scm"
+       wget "https://raw.githubusercontent.com/helix-editor/helix/refs/heads/master/runtime/queries/solidity/textobjects.scm"
     - run: yarn
     - run: yarn test
