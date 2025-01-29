@@ -14,16 +14,19 @@ classifiers = [
   "Topic :: Text Processing :: Linguistic",
   "Typing :: Typed"
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license.text = "MIT"
 readme = "README.md"
+authors = [
+  { name = "Joran Honig" }
+]
 
 [project.urls]
 Homepage = "https://github.com/JoranHonig/tree-sitter-solidity"
 
 [project.optional-dependencies]
-core = ["tree-sitter~=0.21"]
+core = ["tree-sitter~=0.22"]
 
 [tool.cibuildwheel]
-build = "cp38-*"
+build = "cp39-*"
 build-frontend = "build"
