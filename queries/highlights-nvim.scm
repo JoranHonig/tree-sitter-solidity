@@ -139,6 +139,7 @@
 ; Keywords
 [
   "contract"
+  "abstract"
   "interface"
   "library"
   "is"
