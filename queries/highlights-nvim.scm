@@ -306,3 +306,15 @@
 
 ((comment) @comment.documentation
   (#lua-match? @comment.documentation "^/[*][*][^*].*[*]/$"))
+
+((comment) @injection.content
+  (#lua-match? @injection.content "^///[^/]")
+  (#set! injection.language "doxygen"))
+;
+((comment) @injection.content
+  (#lua-match? @injection.content "^///$")
+  (#set! injection.language "doxygen"))
+
+((comment) @injection.content
+  (#lua-match? @injection.content "^/[*][*][^*].*[*]/$")
+  (#set! injection.language "doxygen"))
