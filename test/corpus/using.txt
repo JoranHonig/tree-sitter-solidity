@@ -32,3 +32,61 @@ contract Example {
       (using_directive 
         (type_alias (identifier) (identifier))
         source: (type_name (primitive_type))))))
+
+====================
+Global using directive
+====================
+
+using MyLibrary for uint256;
+
+contract Example {
+}
+
+---
+
+(source_file
+  (using_directive 
+    (type_alias (identifier))
+    source: (type_name (primitive_type)))
+  (contract_declaration
+    name: (identifier)
+    body: (contract_body)))
+
+====================
+Global using directive with global keyword
+====================
+
+using MyLibrary for uint256 global;
+
+contract Example {
+}
+
+---
+
+(source_file
+  (using_directive 
+    (type_alias (identifier))
+    source: (type_name (primitive_type)))
+  (contract_declaration
+    name: (identifier)
+    body: (contract_body)))
+
+====================
+Global using directive with multiple functions
+====================
+
+using {func1, func2} for MyType global;
+
+contract Example {
+}
+
+---
+
+(source_file
+  (using_directive 
+    (type_alias (identifier))
+    (type_alias (identifier))
+    source: (type_name (user_defined_type (identifier))))
+  (contract_declaration
+    name: (identifier)
+    body: (contract_body)))
