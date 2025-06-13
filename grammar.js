@@ -161,6 +161,7 @@ module.exports = grammar({
             $.constant_variable_declaration,
             $.user_defined_type_definition,
             $.event_definition,
+            $.using_directive,
         ),
 
         user_defined_type_definition: $ => seq(
@@ -296,9 +297,13 @@ module.exports = grammar({
 
         using_directive: $ => seq(
             'using',
-            alias($.user_defined_type, $.type_alias),
+            choice(
+                alias($.user_defined_type, $.type_alias),
+                seq('{', commaSep1(alias($.user_defined_type, $.type_alias)), '}')
+            ),
             'for',
             field("source", choice($.any_source_type, $.type_name)),
+            optional('global'),
             $._semicolon
         ),
 
