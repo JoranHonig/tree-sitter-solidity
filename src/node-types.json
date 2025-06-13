@@ -1812,6 +1812,10 @@
         {
           "type": "user_defined_type_definition",
           "named": true
+        },
+        {
+          "type": "using_directive",
+          "named": true
         }
       ]
     }
@@ -2451,7 +2455,7 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -3593,6 +3597,10 @@
   },
   {
     "type": "gasprice",
+    "named": false
+  },
+  {
+    "type": "global",
     "named": false
   },
   {
