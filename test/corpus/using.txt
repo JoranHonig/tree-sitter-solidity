@@ -11,10 +11,13 @@ contract Example {
 (source_file
   (contract_declaration
     name: (identifier)
-    body: (contract_body 
-        (using_directive 
-          (type_alias (identifier) (identifier)) 
-          source: (any_source_type))))) 
+    body: (contract_body
+      (using_directive
+        (type_alias
+          (identifier)
+          (identifier))
+        source: (any_source_type)))))
+
 ====================
 Using directive
 ====================
@@ -28,10 +31,13 @@ contract Example {
 (source_file
   (contract_declaration
     name: (identifier)
-    body: (contract_body 
-      (using_directive 
-        (type_alias (identifier) (identifier))
-        source: (type_name (primitive_type))))))
+    body: (contract_body
+      (using_directive
+        (type_alias
+          (identifier)
+          (identifier))
+        source: (type_name
+          (primitive_type))))))
 
 ====================
 Global using directive
@@ -45,9 +51,11 @@ contract Example {
 ---
 
 (source_file
-  (using_directive 
-    (type_alias (identifier))
-    source: (type_name (primitive_type)))
+  (using_directive
+    (type_alias
+      (identifier))
+    source: (type_name
+      (primitive_type)))
   (contract_declaration
     name: (identifier)
     body: (contract_body)))
@@ -64,9 +72,11 @@ contract Example {
 ---
 
 (source_file
-  (using_directive 
-    (type_alias (identifier))
-    source: (type_name (primitive_type)))
+  (using_directive
+    (type_alias
+      (identifier))
+    source: (type_name
+      (primitive_type)))
   (contract_declaration
     name: (identifier)
     body: (contract_body)))
@@ -83,10 +93,16 @@ contract Example {
 ---
 
 (source_file
-  (using_directive 
-    (type_alias (identifier))
-    (type_alias (identifier))
-    source: (type_name (user_defined_type (identifier))))
+  (using_directive
+    (using_alias
+      (user_defined_type
+        (identifier)))
+    (using_alias
+      (user_defined_type
+        (identifier)))
+    source: (type_name
+      (user_defined_type
+        (identifier))))
   (contract_declaration
     name: (identifier)
     body: (contract_body)))
