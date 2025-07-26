@@ -522,6 +522,9 @@ module.exports = grammar({
             'number',
             'difficulty',
             'gaslimit',
+            'prevrandao',
+            'blobbasefee',
+            'blobfee',
         )),
 
         // -- [ Statements ] --
