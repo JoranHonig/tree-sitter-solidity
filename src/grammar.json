@@ -575,16 +575,20 @@
           }
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_class_heritage"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_class_heritage"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "layout_specifier"
+              }
+            ]
+          }
         },
         {
           "type": "FIELD",
@@ -804,6 +808,23 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    "layout_specifier": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "layout"
+        },
+        {
+          "type": "STRING",
+          "value": "at"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "expression"
         }
       ]
     },
@@ -2722,6 +2743,18 @@
           {
             "type": "STRING",
             "value": "gaslimit"
+          },
+          {
+            "type": "STRING",
+            "value": "prevrandao"
+          },
+          {
+            "type": "STRING",
+            "value": "blobbasefee"
+          },
+          {
+            "type": "STRING",
+            "value": "blobfee"
           }
         ]
       }
@@ -3884,6 +3917,27 @@
               }
             ]
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "returns"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_parameter_list"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "CHOICE",
@@ -7238,6 +7292,14 @@
     [
       "member_expression",
       "_identifier_path"
+    ],
+    [
+      "layout_specifier",
+      "struct_expression"
+    ],
+    [
+      "_nameless_parameter",
+      "parameter"
     ],
     [
       "_primary_expression",
