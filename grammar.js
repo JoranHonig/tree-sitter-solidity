@@ -713,6 +713,10 @@ module.exports = grammar({
                 $.virtual,
                 $.override_specifier,
             )),
+            optional(seq(
+                'returns',
+                $._parameter_list,
+            )),
             choice($._semicolon, field('body', $.function_body))
         ),
 
