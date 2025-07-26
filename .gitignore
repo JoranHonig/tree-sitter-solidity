@@ -11,3 +11,5 @@ node_modules/
 Cargo.lock
 target
 build
+
+tmp_claude/
