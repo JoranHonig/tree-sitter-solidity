@@ -28,7 +28,7 @@ const PREC = {
     REVERT: 13, // ??
 }
 
-// The following is the core grammar for Solidity. It accepts Solidity smart contracts between the versions 0.4.x and 0.7.x.
+// The following is the core grammar for Solidity. It accepts Solidity smart contracts between the versions 0.4.x and 0.8.x.
 module.exports = grammar({
     name: 'solidity',
 
