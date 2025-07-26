@@ -5,19 +5,21 @@
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
-    "test": "tree-sitter generate && tree-sitter test",
     "install": "node-gyp-build",
-    "prebuildify": "prebuildify --napi --strip"
+    "lint": "eslint grammar.js",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js"
   },
   "author": "Joran Honig",
   "license": "MIT",
   "dependencies": {
     "yarn": "^1.22.21",
-    "node-addon-api": "^7.1.0",
-    "node-gyp-build": "^4.8.0"
+    "node-addon-api": "^8.2.2",
+    "node-gyp-build": "^4.8.2"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.21.0"
+    "tree-sitter": "^0.21.1"
   },
   "peerDependenciesMeta": {
     "tree_sitter": {
@@ -25,15 +27,19 @@
     }
   },
   "devDependencies": {
+    "eslint": "^9.14.0",
+    "eslint-config-treesitter": "^1.0.2",
     "tree-sitter-cli": "^0.24.4",
-    "prebuildify": "^6.0.0"
+    "prebuildify": "^6.0.1"
   },
   "files": [
     "grammar.js",
+    "tree-sitter.json",
     "binding.gyp",
     "prebuilds/**",
     "bindings/node/*",
     "queries/*",
-    "src/**"
+    "src/**",
+    "*.wasm"
   ]
 }
