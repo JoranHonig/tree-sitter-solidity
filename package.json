@@ -8,7 +8,8 @@
     "install": "node-gyp-build",
     "lint": "eslint grammar.js",
     "prestart": "tree-sitter build --wasm",
-    "start": "tree-sitter playground"
+    "start": "tree-sitter playground",
+    "test": "tree-sitter test"
   },
   "author": "Joran Honig",
   "license": "MIT",
