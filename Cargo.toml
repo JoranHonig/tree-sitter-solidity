@@ -14,6 +14,8 @@ include = [
   "grammar.js",
   "queries/*",
   "src/*",
+  "tree-sitter.json",
+  "LICENSE",
 ]
 
 [lib]
@@ -26,4 +28,4 @@ tree-sitter-language = "0.1"
 cc = "1.1"
 
 [dev-dependencies]
-tree-sitter = "0.24"
+tree-sitter = "0.25"
