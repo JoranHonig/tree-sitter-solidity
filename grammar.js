@@ -50,6 +50,7 @@ module.exports = grammar({
         [$._primary_expression, $._identifier_path],
         [$._primary_expression, $.member_expression, $._identifier_path],
         [$.member_expression, $._identifier_path],
+        [$.layout_specifier, $.struct_expression],
 
         [$._primary_expression, $.type_cast_expression],
         [$.variable_declaration_tuple, $.tuple_expression],
@@ -188,7 +189,7 @@ module.exports = grammar({
             field("name", $.identifier),
             repeat(choice(
                 $._class_heritage,
-                $._layout_specifier,
+                $.layout_specifier,
             )),
             field('body', $.contract_body),
         ),
@@ -223,7 +224,7 @@ module.exports = grammar({
             commaSep1($.inheritance_specifier)
         ),
 
-        _layout_specifier: $ => seq(
+        layout_specifier: $ => seq(
             "layout",
             "at",
             $.expression,
