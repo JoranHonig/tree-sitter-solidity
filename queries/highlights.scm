@@ -98,6 +98,7 @@
 (meta_type_expression "type" @keyword)
 ; Keywords
 [
+ "layout"
  "pragma"
  "contract"
  "abstract"

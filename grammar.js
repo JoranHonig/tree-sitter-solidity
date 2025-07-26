@@ -186,7 +186,10 @@ module.exports = grammar({
             optional('abstract'),
             'contract',
             field("name", $.identifier),
-            optional($._class_heritage),
+            repeat(choice(
+                $._class_heritage,
+                $._layout_specifier,
+            )),
             field('body', $.contract_body),
         ),
 
@@ -218,6 +221,12 @@ module.exports = grammar({
         _class_heritage: $ => seq(
             "is",
             commaSep1($.inheritance_specifier)
+        ),
+
+        _layout_specifier: $ => seq(
+            "layout",
+            "at",
+            $.expression,
         ),
 
         inheritance_specifier: $ => seq(
