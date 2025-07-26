@@ -51,6 +51,7 @@ module.exports = grammar({
         [$._primary_expression, $.member_expression, $._identifier_path],
         [$.member_expression, $._identifier_path],
         [$.layout_specifier, $.struct_expression],
+        [$._nameless_parameter, $.parameter],
 
         [$._primary_expression, $.type_cast_expression],
         [$.variable_declaration_tuple, $.tuple_expression],
