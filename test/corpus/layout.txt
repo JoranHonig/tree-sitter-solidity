@@ -1,0 +1,29 @@
+================================================================================
+Custom Layout
+================================================================================
+
+contract C layout at 2**255 - 42 {
+    uint x;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    name: (identifier)
+    (layout_specifier
+      (expression
+        (binary_expression
+          left: (expression
+            (binary_expression
+              left: (expression
+                (number_literal))
+              right: (expression
+                (number_literal))))
+          right: (expression
+            (number_literal)))))
+    body: (contract_body
+      (state_variable_declaration
+        type: (type_name
+          (primitive_type))
+        name: (identifier)))))
