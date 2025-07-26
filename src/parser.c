@@ -74089,7 +74089,7 @@ TS_PUBLIC const TSLanguage *tree_sitter_solidity(void) {
     .metadata = {
       .major_version = 1,
       .minor_version = 2,
-      .patch_version = 11,
+      .patch_version = 12,
     },
   };
   return &language;
