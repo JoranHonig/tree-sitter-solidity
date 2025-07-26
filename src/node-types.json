@@ -2395,6 +2395,11 @@
     }
   },
   {
+    "type": "user_definable_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "user_defined_type",
     "named": true,
     "fields": {},
@@ -2436,6 +2441,25 @@
     }
   },
   {
+    "type": "using_alias",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "user_definable_operator",
+          "named": true
+        },
+        {
+          "type": "user_defined_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "using_directive",
     "named": true,
     "fields": {
@@ -2460,6 +2484,10 @@
       "types": [
         {
           "type": "type_alias",
+          "named": true
+        },
+        {
+          "type": "using_alias",
           "named": true
         }
       ]
