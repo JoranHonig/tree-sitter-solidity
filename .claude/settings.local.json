@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.soliditylang.org)"
+    ],
+    "deny": []
+  }
+}
