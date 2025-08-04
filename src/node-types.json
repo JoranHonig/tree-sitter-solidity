@@ -117,6 +117,10 @@
           "named": true
         },
         {
+          "type": "yul_hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_if_statement",
           "named": true
         },
@@ -2661,6 +2665,10 @@
           "named": true
         },
         {
+          "type": "yul_hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_path",
           "named": true
         },
@@ -2717,6 +2725,10 @@
         },
         {
           "type": "yul_hex_number",
+          "named": true
+        },
+        {
+          "type": "yul_hex_string_literal",
           "named": true
         },
         {
@@ -2795,6 +2807,10 @@
           "named": true
         },
         {
+          "type": "yul_hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_path",
           "named": true
         },
@@ -2845,6 +2861,10 @@
           "named": true
         },
         {
+          "type": "yul_hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_path",
           "named": true
         },
@@ -2873,6 +2893,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "yul_hex_string_literal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "yul_identifier",
@@ -2915,6 +2940,10 @@
         },
         {
           "type": "yul_hex_number",
+          "named": true
+        },
+        {
+          "type": "yul_hex_string_literal",
           "named": true
         },
         {
@@ -3002,6 +3031,10 @@
           "named": true
         },
         {
+          "type": "yul_hex_string_literal",
+          "named": true
+        },
+        {
           "type": "yul_path",
           "named": true
         },
@@ -3056,6 +3089,10 @@
           },
           {
             "type": "yul_hex_number",
+            "named": true
+          },
+          {
+            "type": "yul_hex_string_literal",
             "named": true
           },
           {

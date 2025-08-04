@@ -408,11 +408,18 @@ module.exports = grammar({
             $.yul_string_literal,
             $.yul_hex_number,
             $.yul_boolean,
+            $.yul_hex_string_literal,
         ),
         yul_decimal_number: $ => /0|([1-9][0-9]*)/,
         yul_string_literal: $ => $.string,
         yul_hex_number: $ => /0x[0-9A-Fa-f]*/,
         yul_boolean: $ => choice('true', 'false'),
+        yul_hex_string_literal: $ => seq(
+            'hex',
+            choice(
+                seq('"', optional(optionalDashSeparation($._hex_digit)), '"'),
+                seq("'", optional(optionalDashSeparation($._hex_digit)), "'"),
+            )),
 
         // -- Yul Statements --
         yul_block: $ => seq('{', repeat($._yul_statement), '}'),

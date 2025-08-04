@@ -178,3 +178,42 @@ contract Example {
                 (yul_function_call
                   (yul_evm_builtin))
                 (yul_decimal_number)))))))))
+
+================================================================================
+Assembly Hex String Literals
+================================================================================
+
+contract Example {
+    function toTypedDataHash() public {
+        assembly {
+            mstore(0, hex"19_01")
+            mstore(0x20, hex"")
+            mstore(0x40, hex'deadbeef')
+        }
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    (identifier)
+    (contract_body
+      (function_definition
+        (identifier)
+        (visibility)
+        (function_body
+          (statement
+            (assembly_statement
+              (yul_function_call
+                (yul_evm_builtin)
+                (yul_decimal_number)
+                (yul_hex_string_literal))
+              (yul_function_call
+                (yul_evm_builtin)
+                (yul_hex_number)
+                (yul_hex_string_literal))
+              (yul_function_call
+                (yul_evm_builtin)
+                (yul_hex_number)
+                (yul_hex_string_literal)))))))))
