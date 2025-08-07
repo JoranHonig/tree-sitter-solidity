@@ -1,3 +1,5 @@
+/// <reference types="tree-sitter-cli/dsl" />
+// @ts-check
 // Precedence is used by the parser to determine which rule to apply when there are two rules that can be applied.
 // We use the PREC dict to globally define rule precedence
 // [N] corresponds to precedence table at https://docs.soliditylang.org/en/v0.8.24/cheatsheet.html#order-of-precedence-of-operators
