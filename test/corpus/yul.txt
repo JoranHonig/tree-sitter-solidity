@@ -180,6 +180,60 @@ contract Example {
                 (yul_decimal_number)))))))))
 
 ================================================================================
+Yul Function Definition
+================================================================================
+
+contract Example {
+    function foo() public {
+        assembly {
+            function allocate(length) -> pos {
+                pos := mload(0x40)
+                mstore(0x40, add(pos, length))
+            }
+        }
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (contract_declaration
+    (identifier)
+    (contract_body
+      (function_definition
+        (identifier)
+        (visibility)
+        (function_body
+          (statement
+            (assembly_statement
+              (yul_function_definition
+                (yul_identifier
+                  (identifier))
+                (yul_identifier
+                  (identifier))
+                (yul_identifier
+                  (identifier))
+                (yul_block
+                  (yul_assignment
+                    (yul_path
+                      (yul_identifier
+                        (identifier)))
+                    (yul_function_call
+                      (yul_evm_builtin)
+                      (yul_hex_number)))
+                  (yul_function_call
+                    (yul_evm_builtin)
+                    (yul_hex_number)
+                    (yul_function_call
+                      (yul_evm_builtin)
+                      (yul_path
+                        (yul_identifier
+                          (identifier)))
+                      (yul_path
+                        (yul_identifier
+                          (identifier))))))))))))))
+
+================================================================================
 Assembly Hex String Literals
 ================================================================================
 
